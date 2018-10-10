@@ -8,7 +8,11 @@
         <v-layout wrap justify-center>
           <v-flex xs12 sm6 lg4 v-for="member in story.content.body" :key="member.name" v-if="member.staff">
             <v-card height="100%">
-              <v-card-media height="400px" :src="member.img"></v-card-media>
+              <v-img height="400px" :src="member.img" class="grey lighten-2">
+                <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
+                  <v-progress-circular indeterminate color="grey darken-5"></v-progress-circular>
+                </v-layout>
+              </v-img>
               <v-card-title justify-center>
                 <h3 class="d-block text-xs-center">{{member.name}}</h3>
                 <h4 class="d-block text-xs-center">{{member.title}}</h4>
@@ -33,36 +37,13 @@
       <v-container grid-list-lg v-if="!!story.content">
         <v-layout wrap justify-center>
           <v-flex xs12 sm6 lg4 v-for="member in story.content.body" :key="member.name"
-                  v-if="!member.staff && !member.regional">
+                  v-if="!member.staff">
             <v-card height="100%">
-              <v-card-media height="400px" :src="member.img"></v-card-media>
-              <v-card-title justify-center>
-                <h3 class="d-block text-xs-center">{{member.name}}</h3>
-                <h4 class="d-block text-xs-center">{{member.title}}</h4>
-                <p class="text-xs-center">
-                  {{member.bio}}
-                </p>
-                <a class="text-xs-center"
-                   v-if="member.twitter" :href="'http://www.twitter.com/' + member.twitter">
-                  <i class="fab fa-twitter"></i> @{{member.twitter}}
-                </a>
-                <a class="text-xs-center" v-if="member.website.url" :href="member.website.url">
-                  <i class="fas fa-link"></i> {{member.website.url}}
-                </a>
-              </v-card-title>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
-      <v-flex xs12 class="text-xs-center">
-        <h2 class="vv-subheading font-lato text-xs-center">{{ $t("regional") }}</h2>
-      </v-flex>
-      <v-container grid-list-lg v-if="!!story.content">
-        <v-layout wrap justify-center>
-          <v-flex xs12 sm6 lg4 v-for="member in story.content.body" :key="member.name"
-                  v-if="member.regional">
-            <v-card height="100%">
-              <v-card-media height="400px" :src="member.img"></v-card-media>
+              <v-img height="400px" :src="member.img" class="grey lighten-2">
+                <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
+                  <v-progress-circular indeterminate color="grey darken-5"></v-progress-circular>
+                </v-layout>
+              </v-img>
               <v-card-title justify-center>
                 <h3 class="d-block text-xs-center">{{member.name}}</h3>
                 <h4 class="d-block text-xs-center">{{member.title}}</h4>
@@ -91,8 +72,8 @@ import messages from '../assets/translations/team';
 export default {
   mixins: [storyblok],
   i18n: {
-    messages
-  }
+    messages,
+  },
 };
 </script>
 
