@@ -1,8 +1,12 @@
 <template>
   <v-layout class="vv-container" fill-height column>
-    <div class="event-image indexed">
-      <img :src="currentEvent.image" :alt="`${currentEvent.title} image`">
-    </div>
+    <no-ssr>
+      <v-img height="350px" :src="currentEvent.image" class="grey lighten-2">
+        <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
+          <v-progress-circular indeterminate color="grey darken-5"></v-progress-circular>
+        </v-layout>
+      </v-img>
+    </no-ssr>
     <v-container class="indexed" fill-height>
       <v-flex xs12>
         <div class="event-wrapper">
@@ -61,10 +65,6 @@ img {
   width: 100%;
   max-height: 400px;
   object-fit: cover;
-}
-
-.event-image {
-  max-height: 400px;
 }
 
 .vv-container {

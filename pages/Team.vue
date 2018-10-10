@@ -8,11 +8,13 @@
         <v-layout wrap justify-center>
           <v-flex xs12 sm6 lg4 v-for="member in story.content.body" :key="member.name" v-if="member.staff">
             <v-card height="100%">
-              <v-img height="400px" :src="member.img" class="grey lighten-2">
-                <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
-                  <v-progress-circular indeterminate color="grey darken-5"></v-progress-circular>
-                </v-layout>
-              </v-img>
+              <no-ssr>
+                <v-img height="400px" :src="member.img" class="grey lighten-2">
+                  <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
+                    <v-progress-circular indeterminate color="grey darken-5"></v-progress-circular>
+                  </v-layout>
+                </v-img>
+              </no-ssr>
               <v-card-title justify-center>
                 <h3 class="d-block text-xs-center">{{member.name}}</h3>
                 <h4 class="d-block text-xs-center">{{member.title}}</h4>
@@ -39,11 +41,13 @@
           <v-flex xs12 sm6 lg4 v-for="member in story.content.body" :key="member.name"
                   v-if="!member.staff">
             <v-card height="100%">
-              <v-img height="400px" :src="member.img" class="grey lighten-2">
-                <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
-                  <v-progress-circular indeterminate color="grey darken-5"></v-progress-circular>
-                </v-layout>
-              </v-img>
+              <no-ssr>
+                <v-img height="400px" :src="member.img" class="grey lighten-2">
+                  <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
+                    <v-progress-circular indeterminate color="grey darken-5"></v-progress-circular>
+                  </v-layout>
+                </v-img>
+              </no-ssr>
               <v-card-title justify-center>
                 <h3 class="d-block text-xs-center">{{member.name}}</h3>
                 <h4 class="d-block text-xs-center">{{member.title}}</h4>
