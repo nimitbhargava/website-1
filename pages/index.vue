@@ -2,6 +2,7 @@
   <div>
     <v-parallax
       dark
+      class="grey darken-2"
       src="/images/fox-bg.jpg">
       <v-container fill-height>
         <v-layout align-center row wrap justify-space-between>
@@ -37,17 +38,17 @@ import VVAnnouncements from '../components/Announcements';
 export default {
   mixins: [storyblok],
   components: {
-    VVAnnouncements
+    VVAnnouncements,
   },
   computed: {
     announcements() {
       return this.story.content.body;
-    }
+    },
   },
   i18n: {
-    messages
+    messages,
   },
-  transition: 'fade'
+  transition: 'fade',
 };
 </script>
 
