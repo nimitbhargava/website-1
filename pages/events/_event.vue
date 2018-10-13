@@ -1,10 +1,14 @@
 <template>
   <v-layout class="vv-container" fill-height column>
     <no-ssr>
-      <v-img height="350px" :src="currentEvent.image" class="grey lighten-2">
-        <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
-          <v-progress-circular indeterminate color="grey darken-5"></v-progress-circular>
-        </v-layout>
+      <v-img height="350px"
+            :src="currentEvent.image"
+            :lazy-src="resize(currentEvent.image, 'smart')"
+            :srcset="
+            `${resize(currentEvent.image, '400x0')} 400w, ` +
+            `${resize(currentEvent.image, '800x0')} 800w, ` +
+            `${resize(currentEvent.image, '1200x0')} 1200w, ` +
+            `${currentEvent.image} 1600w`">
       </v-img>
     </no-ssr>
     <v-container class="indexed" fill-height>
@@ -55,6 +59,11 @@ export default {
   methods: {
     toHtml(text) {
       return markdown.toHTML(text);
+    },
+    resize(image, option) {
+      const imageService = '//img2.storyblok.com/';
+      const path = image.replace('//a.storyblok.com', '');
+      return imageService + option + path;
     },
   },
 };
