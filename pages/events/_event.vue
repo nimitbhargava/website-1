@@ -1,7 +1,7 @@
 <template>
   <v-layout class="vv-container" fill-height column>
     <no-ssr>
-      <v-img height="350px"
+      <v-img height="400px"
             :src="currentEvent.image"
             :lazy-src="resize(currentEvent.image, 'smart')"
             :srcset="
@@ -33,7 +33,7 @@
           </div>
           <div class="text-xs-left" v-html="toHtml(currentEvent.description)"></div>
           <div class="card-buttons">
-            <v-btn color="card-button secondary darken-2" dark v-for="action in currentEvent.actions"
+            <v-btn color="card-button secondary darken-2 d-flex" dark v-for="action in currentEvent.actions"
                    :key="action.text"
                    :href="action.url.url" target="_blank">
               {{action.text}}
