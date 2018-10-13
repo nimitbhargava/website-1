@@ -3,12 +3,12 @@
     <v-layout wrap>
       <v-flex xs12 sm4 md3 v-for="(event, index) in events" :key="`${event.name}-${index}`">
         <v-card class="vv-card" hover :to="event.link.cached_url" nuxt>
-          <v-card-media
-            class="white--text vv-card-image"
-            height="200px"
-            :src="event.img">
-            <v-container fill-height fluid>
-              <v-layout fill-height>
+          <no-ssr>
+            <v-img
+              class="white--text vv-card-image grey lighten-2"
+              height="200px"
+              :src="event.img">
+              <v-layout fill-height align-center justify-center ma-0>
                 <v-flex xs12 d-flex align-center justify-center class="event-name">
                   <div>
                     <h3 class="headline">{{event.location}}</h3>
@@ -16,8 +16,8 @@
                   </div>
                 </v-flex>
               </v-layout>
-            </v-container>
-          </v-card-media>
+            </v-img>
+          </no-ssr>
         </v-card>
       </v-flex>
     </v-layout>
@@ -26,23 +26,25 @@
 
 <script>
 export default {
-  props: ['events']
+  props: ['events'],
 };
 </script>
 
 <style scoped lang="scss">
 .vv-card {
-  &:before {
-    position: absolute;
-    content: '';
-    z-index: 1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    opacity: 1;
-    transition: 0.3s opacity;
+  .v-image {
+    &:after {
+      position: absolute;
+      content: '';
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      opacity: 1;
+      transition: 0.3s opacity;
+    }
   }
 
   &:hover {
@@ -60,6 +62,9 @@ export default {
     z-index: 2;
     flex-wrap: wrap;
     text-align: center;
+    p {
+      margin: 0;
+    }
   }
 }
 </style>

@@ -1,8 +1,16 @@
 <template>
   <v-layout class="vv-container" fill-height column>
-    <div class="event-image indexed">
-      <img :src="currentEvent.image" :alt="`${currentEvent.title} image`">
-    </div>
+    <no-ssr>
+      <v-img height="400px"
+            :src="currentEvent.image"
+            :lazy-src="resize(currentEvent.image, 'smart')"
+            :srcset="
+            `${resize(currentEvent.image, '400x0')} 400w, ` +
+            `${resize(currentEvent.image, '800x0')} 800w, ` +
+            `${resize(currentEvent.image, '1200x0')} 1200w, ` +
+            `${currentEvent.image} 1600w`">
+      </v-img>
+    </no-ssr>
     <v-container class="indexed" fill-height>
       <v-flex xs12>
         <div class="event-wrapper">
@@ -52,6 +60,11 @@ export default {
     toHtml(text) {
       return markdown.toHTML(text);
     },
+    resize(image, option) {
+      const imageService = '//img2.storyblok.com/';
+      const path = image.replace('//a.storyblok.com', '');
+      return imageService + option + path;
+    },
   },
 };
 </script>
@@ -61,10 +74,6 @@ img {
   width: 100%;
   max-height: 400px;
   object-fit: cover;
-}
-
-.event-image {
-  max-height: 400px;
 }
 
 .vv-container {
@@ -117,7 +126,7 @@ h3 {
 
 @media (max-width: 400px) {
   .card-button {
-    display: block;
+    display: flex;
     width: 100%;
     margin-left: 0;
     margin-bottom: 5px;
