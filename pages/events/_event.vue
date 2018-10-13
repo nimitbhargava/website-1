@@ -33,7 +33,7 @@
           </div>
           <div class="text-xs-left" v-html="toHtml(currentEvent.description)"></div>
           <div class="card-buttons">
-            <v-btn color="card-button secondary darken-2 d-flex" dark v-for="action in currentEvent.actions"
+            <v-btn color="card-button secondary darken-2" dark v-for="action in currentEvent.actions"
                    :key="action.text"
                    :href="action.url.url" target="_blank">
               {{action.text}}
@@ -126,7 +126,7 @@ h3 {
 
 @media (max-width: 400px) {
   .card-button {
-    display: block;
+    display: flex;
     width: 100%;
     margin-left: 0;
     margin-bottom: 5px;
