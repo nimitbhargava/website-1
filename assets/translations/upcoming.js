@@ -17,5 +17,9 @@ export default {
   pt_br: {
     title: 'Próximas Skulks',
     subtitle: `O que é uma skulk? Um grupo de raposas (foxes) é chamado Skulk. Aqui estão os nossos próximos eventos.`
+  },
+  fr: {
+    title: 'Skulks à venir',
+    subtitle: `Qu'est-ce qu'un skulk ? Un groupe de renards (« foxes ») est en fait appelé un skulk. Voici les événements à venir pour une conférence près de chez vous !`
   }
 }

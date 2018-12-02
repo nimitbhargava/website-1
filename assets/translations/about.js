@@ -187,5 +187,65 @@ export default {
         paragraph5: 'Obrigada pela compreensão! 🦊'
       }
     }
+  },
+  fr: {
+    vixens: {
+      title: 'À propos de Vue Vixens',
+      content: `{medium} est une initiative fondée par {jen}, Developer Advocate chez
+              {progress}, qui crée et anime des ateliers pour enseigner
+              Vue.js à des personnes sous-représentées, de manière cool et amusante.
+              Ceci est basé sur le modèle fructueux mis au point par Shmuela Jacobs pour la communauté Angular
+              ({ngGirls}) lui-même
+              inspiré des initiatives de Rails Bridge et Django Girls.
+              Le format implique des laboratoires de code auto-pilotés sous forme de groupes,
+              avec un montorat par les participants de conférences et les conférenciers qui se portent volontaires pour aider.
+              L'objectif du programme est de familiariser les femmes et celles qui s'identifient comme telles
+              avec Vue.js dans un environnement favorable et inclusif. Nous aidons également les conférences à organiser
+              leurs initiatives en matière de diversité, par exemple en offrant des billets de conférence gratuits, et nous mettons en place un fond de bourses d'études
+              pour aider les participantes à réduire le coût d'une conférence pour que ces dernières puissent y assister plus facilement.
+              Des questions ? Contactez-nous à {mail}`,
+      mediumLink: 'Vue Vixens',
+      jenLink: 'Jen Looper',
+      progressLink: 'Progress',
+      ngGirlsLink: 'ng-girls.org',
+      mailLink: 'info@vuevixens.org'
+    },
+    activities: {
+      title: 'À propos de nos activités',
+      content: {
+        paragraph1: `Que pouvez-vous attendre d'un événement Vue Vixens ? Eh bien, en tant qu'étudiante, peut-être nouvelle
+              dans de le domaine du développment frontend, vou avez la possibilité d'apprendre
+              à propos de Vue.js, un framework original pour la création d'applications web et mobiles. Au cours
+              d’un petit-déjeuner, d’un déjeuner-découverte ou d’une journée complète, vous travaillerez avec un
+              mentor en petits groupes dans le cadre d'un atelier autonome.
+              Vous accomplirez la tâche de construire
+              une application web et une application mobile qui vous enseignera le framework et la programmation en
+              JavaScript.
+              Vous aurez également l'occasion de rencontrer et de travailler avec des étudiants partageant les mêmes idées et de dialoguer avec les
+              leaders de l'industrie – nos mentors sont souvent des conférenciers lors de la conférence à laquelle vous assistez.`,
+        paragraph2: `{mentorsNote} : si vous vous joignez à un skulk Vue Vixens en tant que mentor, d’abord merci !
+              Grâce à vous, nous pouvons offrir
+              des ateliers gratuits aux nouvelles développeuses dans un environnement favorable. Votre travail consiste à rester avec vos
+              mentorés tout au long
+              de la journée, en les aidant à surmonter leurs difficultés et en leur donnant un aperçu de la vie d'une développeuse professionnelle chevronnée.
+              Vous êtes le, ou la meilleure !
+              Juste pour être clair, n'importe qui peut être un mentor pour Vue Vixens! Nous vous remercions de votre participation.`,
+        mentorsNote: `Une note aux mentors`,
+        paragraph3: `{studentsNote} : vous ne savez pas si vous allez convenir pour un skulk Vue Vixens ? Si vous êtes une nouvelle développeuse
+              qui s'identifie comme une femme, vous êtes la bienvenue.
+              Ce groupe se concentre sur la formation et la promotion des femmes développeuses, et de celles qui s'identifient comme telles.
+              Nous sommes trans-amicaux.
+              La fondatrice de Vue Vixens, Jen Looper, est une ancienne élève du Wellesley College (promotion de 1992).
+              Elle prend comme critère ceux d'admission du collège. Pour paraphraser leur déclaration d'admissibilité :`,
+        studentsNote: 'Une note aux étudiants',
+        paragraph4: `"Nous admettrons toute personne qui vit en tant que femme et s'identifie systématiquement en tant que femme ;
+              par conséquent, les candidats masculins à la naissance
+              identifiés comme femmes sont éligibles. Nous souhaitons également la bienvenue aux femmes assignées à la naissance
+              et qui ont le sentiment d'appartenir à notre communauté.
+              Nous cherchons à fournir aux étudiantes un environnement d’apprentissage unique,
+              spécialement conçu pour préparer les femmes à s’épanouir dans un monde complexe."`,
+        paragraph5: 'Merci de votre compréhension ! 🦊'
+      }
+    }
   }
 }

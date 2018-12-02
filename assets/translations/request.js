@@ -56,5 +56,16 @@ export default {
     li3:
       '🦊 Mentores são escolhidos dentre os speakers da conferência. Nós falamos com eles se nos der uma lista!',
     button: 'Pede uma Skulk'
+  },
+  fr: {
+    title:
+      'Demander un atelier Vue Vixens pour votre Conférence, Meetup, Groupe ou Événement',
+    subtitle: `Comment ça fonctionne ?`,
+    content: `Si vous organisez un événement, améliorez vos offres de diversité en offrant un atelier Vue Vixens gratuit aux personnes qui s'identifient comme étant des femmes. Un modèle qui fonctionne est d'offrir vos ateliers payés avant votre conférence, puis d'offrir des ateliers Vue Vixens après l'événement. Les ateliers sont des événements d'une journée, gratuits pour les participantes inscrites et à faible coût pour vous. Les organisateurs de conférences travaillent avec nous pour organiser la logistique, notamment :`,
+    li1: '🦊 Un lieu avec un espace de travail et un accès internet',
+    li2: '🦊 Déjeuner pour les participants, fourni par la conférence/événement',
+    li3:
+      '🦊 Les mentors sont choisis parmi les conférenciers. Nous allons travailler pour les recruter si vous pouvez fournir une liste !',
+    button: 'Demander un Skulk'
   }
 }
