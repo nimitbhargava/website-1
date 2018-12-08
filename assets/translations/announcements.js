@@ -14,5 +14,9 @@ export default {
   pt_br: {
     eventsTitle: 'Próximos Eventos',
     cta: 'Ver todos os eventos'
+  },
+  fr: {
+    eventsTitle: 'Événements à venir',
+    cta: 'Voir tous les événements'
   }
 }

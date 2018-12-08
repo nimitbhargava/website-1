@@ -43,5 +43,15 @@ export default {
     artistLink: 'KaiXinFun',
     item2: `🦊 Este projeto foi inspirado por {ngGirls}, {djangoGirls}, e {railsBridge}. Iniciativas
                 incriveis, que valem a pena conhecer!`
+  },
+  fr: {
+    title: 'Crédits',
+    subtitle: `Nous sommes redevables à plusieurs ressources en ligne et en personne.`,
+    item1: `🦊 Les photos sur ce site proviennent de {unsplash},
+                par Joey Kyber, Westley Ferguson, Caleb Woods, Jeremy Vessey, Ray Hennessey, Climate KIC,
+                Dai KE, Hans Veth, Mikael Kristenson, Nathan Anderson. L'image de la page principale a été prise de {mainPage}`,
+    unsplashLink: 'Unsplash',
+    mainPageLink: 'verniannguyen sur DeviantArt',
+    item2: `🦊 Ce projet a été inspiré par {ngGirls}, {djangoGirls}, et {railsBridge}. Des initatives formindables qui valent le détour !`
   }
 }

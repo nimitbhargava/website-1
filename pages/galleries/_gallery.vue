@@ -73,13 +73,15 @@ export default {
 }
 
 @media (max-width: 960px) {
-  .v-carousel {
+  .v-carousel,
+  .v-carousel__item {
     height: 480px !important;
   }
 }
 
 @media (max-width: 420px) {
-  .v-carousel {
+  .v-carousel,
+  .v-carousel__item {
     height: 250px !important;
   }
 }

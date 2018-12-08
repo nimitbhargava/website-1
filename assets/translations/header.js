@@ -14,6 +14,7 @@ export default {
       es: 'Español',
       pt: 'Português',
       pt_br: 'Português - BR',
+      fr: 'Français'
     }
   },
   es: {
@@ -31,6 +32,7 @@ export default {
       es: 'Español',
       pt: 'Português',
       pt_br: 'Português - BR',
+      fr: 'Français'
     }
   },
   pt: {
@@ -48,6 +50,7 @@ export default {
       es: 'Español',
       pt: 'Português',
       pt_br: 'Português - BR',
+      fr: 'Français'
     }
   },
   pt_br: {
@@ -65,6 +68,25 @@ export default {
       es: 'Español',
       pt: 'Português',
       pt_br: 'Português - BR',
+      fr: 'Français'
+    }
+  },
+  fr: {
+    menu: {
+      about: 'À propos',
+      upcoming: 'À venir',
+      sponsors: 'Sponsors',
+      team: 'Équipe',
+      gallery: 'Galerie',
+      library: 'Librairie',
+      shop: 'Boutique'
+    },
+    languages: {
+      en: 'English',
+      es: 'Español',
+      pt: 'Português',
+      pt_br: 'Português - BR',
+      fr: 'Français'
     }
   }
 }

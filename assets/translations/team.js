@@ -23,4 +23,10 @@ export default {
     regional: 'Lideres Regionais',
     chapter: 'Chapter Leaders',
   },
+  fr: {
+    team: 'Notre Équipe',
+    board: `Conseil d'administration`,
+    regional: 'Leaders régionaux',
+    chapter: 'Chapter Leaders',
+  }
 };

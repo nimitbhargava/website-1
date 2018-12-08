@@ -14,5 +14,9 @@ export default {
   pt_br: {
     title: 'Hey!',
     subtitle: `Parece que você chegou aqui por engano. Está na hora de voltar.`
+  },
+  fr: {
+    title: 'Hey !',
+    subtitle: 'Il semblerait que vous ayez trouvé cette page par erreur. Retournez en arrière.'
   }
 }

@@ -26,7 +26,7 @@
         </v-layout>
       </v-container>
     </v-parallax>
-    <VVAnnouncements v-if="announcements.length" :announcements="announcements"/>
+    <VVAnnouncements v-if="announcements && announcements.length" :announcements="announcements"/>
   </div>
 </template>
 

@@ -14,5 +14,9 @@ export default {
   pt_br: {
     title: 'Galeria',
     subtitle: `Aqui encontrará imagens dos nossos skulks`
+  },
+  fr: {
+    title: 'Galerie',
+    subtitle: `Ici vous pouvez trouver des images de nos skulks passés`
   }
 }
