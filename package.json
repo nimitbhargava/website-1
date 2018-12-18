@@ -2,8 +2,13 @@
   "name": "vuevixens",
   "version": "1.0.0",
   "description": "Workshops for Foxy People",
-  "author": "NataliaTepluhin <tarya.se@gmail.com>",
+  "author": "NataliaTepluhina <tarya.se@gmail.com>",
   "private": true,
+  "config": {
+    "nuxt": {
+      "port": "3333"
+    }
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -28,6 +33,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
+    "cross-env": "^5.2.0",
     "eslint": "^4.15.0",
     "eslint-friendly-formatter": "^3.0.0",
     "eslint-loader": "^1.7.1",
