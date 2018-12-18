@@ -11,6 +11,7 @@
       <v-btn flat to="/team" nuxt>{{ $t("menu.team") }}</v-btn>
       <v-btn flat to="/gallery" nuxt>{{ $t("menu.gallery") }}</v-btn>
       <v-btn flat to="/library" nuxt>{{ $t("menu.library") }}</v-btn>
+      <v-btn flat href="https://dev.to/vuevixens" target="_blank">Blog</v-btn>
       <v-btn flat href="https://vuevixens.threadless.com/" target="_blank">{{ $t("menu.shop") }}</v-btn>
     </v-toolbar-items>
     <v-toolbar-items>
@@ -43,7 +44,7 @@
               <span class="flag-icon flag-icon-br"></span>
               {{ $t("languages.pt_br") }}
             </v-list-tile-title>
-          </v-list-tile> -->
+          </v-list-tile>-->
           <v-list-tile @click="changeLocale('fr')">
             <v-list-tile-title>
               <span class="flag-icon flag-icon-fr"></span>
@@ -57,47 +58,47 @@
 </template>
 
 <script>
-import messages from '../assets/translations/header';
+import messages from "../assets/translations/header";
 export default {
   computed: {
     currentLocale() {
       switch (this.$i18n.locale) {
-        case 'en':
+        case "en":
           return {
-            language: this.$t('languages.en'),
-            flag: 'flag-icon-gb',
+            language: this.$t("languages.en"),
+            flag: "flag-icon-gb"
           };
-        case 'es':
+        case "es":
           return {
-            language: this.$t('languages.es'),
-            flag: 'flag-icon-es',
+            language: this.$t("languages.es"),
+            flag: "flag-icon-es"
           };
-        case 'pt':
+        case "pt":
           return {
-            language: this.$t('languages.pt'),
-            flag: 'flag-icon-pt',
+            language: this.$t("languages.pt"),
+            flag: "flag-icon-pt"
           };
-        case 'pt_br':
+        case "pt_br":
           return {
-            language: this.$t('languages.pt_br'),
-            flag: 'flag-icon-br',
+            language: this.$t("languages.pt_br"),
+            flag: "flag-icon-br"
           };
-        case 'fr':
+        case "fr":
           return {
-            language: this.$t('languages.fr'),
-            flag: 'flag-icon-fr',
+            language: this.$t("languages.fr"),
+            flag: "flag-icon-fr"
           };
       }
-    },
+    }
   },
   methods: {
     changeLocale(locale) {
-      this.$bus.$emit('changeLocale', locale);
-    },
+      this.$bus.$emit("changeLocale", locale);
+    }
   },
   i18n: {
-    messages,
-  },
+    messages
+  }
 };
 </script>
 

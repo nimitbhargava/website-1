@@ -1,9 +1,6 @@
 <template>
   <div>
-    <v-parallax
-      dark
-      class="grey darken-2"
-      src="/images/fox-bg.jpg">
+    <v-parallax dark class="grey darken-2" src="/images/fox-bg.jpg">
       <v-container fill-height>
         <v-layout align-center row wrap justify-space-between>
           <v-flex xs12 sm12 md4 class="text-xs-center" order-md2>
@@ -11,16 +8,20 @@
           </v-flex>
           <v-flex xs12 sm12 md7 order-md1>
             <h1 class="vv-heading font-lato text-xs-center text-md-left">{{$t('heading.title')}}</h1>
-            <h2 class="vv-subheading font-lato text-xs-center text-md-left">
-              {{$t('heading.description')}}
-            </h2>
+            <h2
+              class="vv-subheading font-lato text-xs-center text-md-left"
+            >{{$t('heading.description')}}</h2>
             <v-flex class="vv-cta">
-              <v-btn href="https://vuevixens.github.io/docs/workshop/" target="_blank"
-                     color="accent darken-1">{{$t('heading.workshops')}}
-              </v-btn>
-              <v-btn href="https://dev.to/vuevixens/" target="_blank"
-                     color="accent darken-1">Blog
-              </v-btn>
+              <v-btn
+                href="https://vuevixens.github.io/docs/workshop/"
+                target="_blank"
+                color="accent darken-1"
+              >{{$t('heading.workshops')}}</v-btn>
+              <v-btn
+                href="https://www.patreon.com/vuevixens"
+                target="_blank"
+                color="accent darken-1"
+              >Patreon</v-btn>
             </v-flex>
           </v-flex>
         </v-layout>
@@ -31,24 +32,24 @@
 </template>
 
 <script>
-import storyblok from '../mixins/storyblok';
-import messages from '../assets/translations/home';
-import VVAnnouncements from '../components/Announcements';
+import storyblok from "../mixins/storyblok";
+import messages from "../assets/translations/home";
+import VVAnnouncements from "../components/Announcements";
 
 export default {
   mixins: [storyblok],
   components: {
-    VVAnnouncements,
+    VVAnnouncements
   },
   computed: {
     announcements() {
       return this.story.content.body;
-    },
+    }
   },
   i18n: {
-    messages,
+    messages
   },
-  transition: 'fade',
+  transition: "fade"
 };
 </script>
 
