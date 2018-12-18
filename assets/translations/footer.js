@@ -18,5 +18,10 @@ export default {
     progress: 'Um projeto apoiado por Progress',
     request: 'Pedir uma Skulk',
     credits: 'Créditos'
+  },
+  fr: {
+    progress: 'Un projet supporté par Progress',
+    request: 'Demander un Skulk',
+    credits: 'Crédits'
   }
 }
