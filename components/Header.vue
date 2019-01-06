@@ -14,7 +14,7 @@
       <v-btn flat href="https://dev.to/vuevixens" target="_blank">Blog</v-btn>
       <v-btn flat href="https://vuevixens.threadless.com/" target="_blank">{{ $t("menu.shop") }}</v-btn>
       <v-btn flat href="https://github.com/VueVixens" target="_blank">
-        <img src="~/assets/images/github.png" alt="GitHub Logo">
+        <i class="fab fa-github fa-2x"></i>
       </v-btn>
     </v-toolbar-items>
     <v-toolbar-items>

@@ -1,8 +1,8 @@
 export default {
   en: {
-    progress: 'A Project supported by Progress',
-    request: 'Request a Skulk',
-    credits: 'Credits'
+    credits: 'Credits',
+    contact: 'Contact Us',
+    press: 'Press Kit'
   },
   es: {
     progress: 'Un proyecto apoyado por Progress',

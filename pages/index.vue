@@ -22,17 +22,6 @@
                 target="_blank"
                 color="accent darken-1"
               >Patreon</v-btn>
-              <v-flex class="vv-icon">
-                <a href="https://tinyletter.com/VueVixens" target="_blank">
-                  <i class="far fa-newspaper fa-2x"></i>
-                </a>
-                <a href="https://twitter.com/VueVixens" target="_blank">
-                  <i class="fab fa-twitter fa-2x"></i>
-                </a>
-                <a href="https://slackin-fxsumkvfno.now.sh/" target="_blank">
-                  <i class="fab fa-slack fa-2x"></i>
-                </a>
-              </v-flex>
             </v-flex>
           </v-flex>
         </v-layout>
@@ -67,14 +56,6 @@ export default {
 <style scoped lang="scss">
 .vv-logo {
   max-width: 100%;
-}
-
-.vv-icon {
-  padding: 8px;
-}
-.vv-icon a {
-  color: #fff;
-  padding-right: 10px;
 }
 
 .vv-heading {
