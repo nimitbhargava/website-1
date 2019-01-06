@@ -27,6 +27,16 @@
               tabindex="-1"
               value/>
           </div>
+          <v-checkbox
+            color="secondary"
+            label="I agree to receive emails from VueVixens organisation"></v-checkbox>
+          <p class="text-xs-left caption">You can unsubscribe at any time by clicking the link in the footer of our emails.</p>
+          <p class="text-xs-left caption">We use Mailchimp as our marketing platform. By clicking below to subscribe,
+            you acknowledge that your information will be transferred to Mailchimp for processing.
+            <a href="https://mailchimp.com/legal/" target="_blank">
+              Learn more about Mailchimp's privacy practices here.
+            </a>
+          </p>
           <v-btn color="card-button secondary darken-2" dark type="submit">Submit</v-btn>
         </v-form>
       </v-flex>
