@@ -15,13 +15,16 @@
         color="white" flat round to="/credits">
         {{ $t("credits") }}
       </v-btn>
-    </v-layout>
-    <v-layout justify-end align-center row wrap>
-      <a href="mailto:info@vuevixens.org" target="_blank"><i class="fas fa-envelope"></i></a>
-      <a href="https://tinyletter.com/VueVixens" target="_blank"><i class="far fa-newspaper"></i></a>
-      <a href="https://github.com/vuevixens" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://twitter.com/VueVixens" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://slackin-fxsumkvfno.now.sh/" target="_blank"><i class="fab fa-slack"></i></a>
+      <v-btn
+        color="white" flat round
+        href="https://spark.adobe.com/page/FFczmvHR6Brpu/" target="_blank">
+        {{ $t("Press Kit") }}
+      </v-btn>
+      <v-btn
+        color="white" flat round
+        href="mailto:info@vuevixens.org" target="_blank">
+        {{ $t("Contact Us") }}
+      </v-btn>
     </v-layout>
   </v-footer>
 </template>

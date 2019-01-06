@@ -13,6 +13,9 @@
       <v-btn flat to="/library" nuxt>{{ $t("menu.library") }}</v-btn>
       <v-btn flat href="https://dev.to/vuevixens" target="_blank">Blog</v-btn>
       <v-btn flat href="https://vuevixens.threadless.com/" target="_blank">{{ $t("menu.shop") }}</v-btn>
+      <v-btn flat href="https://github.com/VueVixens" target="_blank">
+        <img src="~/assets/images/github.png" alt="GitHub Logo">
+      </v-btn>
     </v-toolbar-items>
     <v-toolbar-items>
       <v-menu offset-y left dark transition="slide-x-transition">
