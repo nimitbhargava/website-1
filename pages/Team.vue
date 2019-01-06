@@ -84,6 +84,10 @@
               <v-card-title justify-center>
                 <h3 class="d-block text-xs-center">{{member.name}}</h3>
                 <h4 class="d-block text-xs-center primary--text text--darken-2">{{member.title}} Chapter Leader</h4>
+                <a class="text-xs-center"
+                   v-if="member.twitter" :href="'http://www.twitter.com/' + member.twitter">
+                  <i class="fab fa-twitter"></i> @{{member.twitter}}
+                </a>
               </v-card-title>
             </v-card>
           </v-flex>
