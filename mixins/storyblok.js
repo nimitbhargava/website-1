@@ -27,9 +27,13 @@ export default {
     let version =
       context.query._storyblok || context.isDev ? 'draft' : 'published';
     const path = formatPath(context.route.path, context.app.i18n.locale);
+
     const response = await context.app.$storyapi.get(path, {
       version,
+    }).catch(err => {
+      return context.error({ statusCode: 404 });
     });
+
     return response.data;
   },
   mounted() {
