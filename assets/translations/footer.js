@@ -1,27 +1,27 @@
 export default {
   en: {
-    progress: 'A Project supported by Progress',
-    request: 'Request a Skulk',
-    credits: 'Credits'
+    credits: 'Credits',
+    contact: 'Contact Us',
+    press: 'Press Kit'
   },
   es: {
-    progress: 'Un proyecto apoyado por Progress',
-    request: 'Solicita un Skulk',
-    credits: 'Créditos'
+    credits: 'Créditos',
+    contact: 'Contact Us',
+    press: 'Press Kit'
   },
   pt: {
-    progress: 'Um projeto apoiado por Progress',
-    request: 'Pedir uma Skulk',
-    credits: 'Créditos'
+    credits: 'Créditos',
+    contact: 'Contact Us',
+    press: 'Press Kit'
   },
   pt_br: {
-    progress: 'Um projeto apoiado por Progress',
-    request: 'Pedir uma Skulk',
-    credits: 'Créditos'
+    credits: 'Créditos',
+    contact: 'Contact Us',
+    press: 'Press Kit'
   },
   fr: {
-    progress: 'Un projet supporté par Progress',
-    request: 'Demander un Skulk',
-    credits: 'Crédits'
+    credits: 'Crédits',
+    contact: 'Contact Us',
+    press: 'Press Kit'
   }
 }
