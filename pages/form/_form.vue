@@ -7,18 +7,20 @@
           action="https://vuevixens.us7.list-manage.com/subscribe/post?u=7754f9dbbdff11682c8ff2e73&amp;id=54e8642cad"
           method="post"
           class="submit-form"
-          @submit="formSubmit"
           v-model="valid">
-          <v-text-field name="EMAIL" label="Email *" required></v-text-field>
+          <v-text-field
+            name="EMAIL"
+            label="Email *"
+            v-model="email"></v-text-field>
           <v-text-field
             name="FNAME"
             label="Full name *"
-            required></v-text-field>
+            v-model="name"></v-text-field>
           <v-text-field name="AFFIL" label="Affiliation"></v-text-field>
           <v-text-field
             name="FOOD"
             label="Food preferences (if any)"></v-text-field>
-          <input type="text" name="CONF" class="hidden-field" />
+          <input type="text" name="CONF" class="hidden-field" :value="formEvent" />
           <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
           <div class="hidden-field">
             <input
@@ -29,6 +31,7 @@
           </div>
           <v-checkbox
             color="secondary"
+            v-model="gdpr"
             label="I agree to receive emails from VueVixens organisation"></v-checkbox>
           <p class="text-xs-left caption">You can unsubscribe at any time by clicking the link in the footer of our emails.</p>
           <p class="text-xs-left caption">We use Mailchimp as our marketing platform. By clicking below to subscribe,
@@ -49,8 +52,13 @@ export default {
   data() {
     return {
       valid: true,
+      formEvent: this.$route.params.form,
+      email: '',
+      name: '',
+      gdpr: false,
     };
   },
+  methods: {}
 };
 </script>
 

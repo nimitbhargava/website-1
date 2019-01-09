@@ -3,16 +3,16 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-const _ea25fb34 = () => import('../pages/About.vue' /* webpackChunkName: "pages/About" */).then(m => m.default || m)
+const _6f6057b0 = () => import('../pages/Request.vue' /* webpackChunkName: "pages/Request" */).then(m => m.default || m)
 const _876030d8 = () => import('../pages/Team.vue' /* webpackChunkName: "pages/Team" */).then(m => m.default || m)
 const _d890df60 = () => import('../pages/Sponsors.vue' /* webpackChunkName: "pages/Sponsors" */).then(m => m.default || m)
-const _6f6057b0 = () => import('../pages/Request.vue' /* webpackChunkName: "pages/Request" */).then(m => m.default || m)
 const _5f6c1054 = () => import('../pages/Library.vue' /* webpackChunkName: "pages/Library" */).then(m => m.default || m)
+const _ea25fb34 = () => import('../pages/About.vue' /* webpackChunkName: "pages/About" */).then(m => m.default || m)
 const _72ba98b3 = () => import('../pages/Credits.vue' /* webpackChunkName: "pages/Credits" */).then(m => m.default || m)
-const _3c00267b = () => import('../pages/Form.vue' /* webpackChunkName: "pages/Form" */).then(m => m.default || m)
 const _03a73f6b = () => import('../pages/Gallery.vue' /* webpackChunkName: "pages/Gallery" */).then(m => m.default || m)
 const _66e4f629 = () => import('../pages/galleries/_gallery.vue' /* webpackChunkName: "pages/galleries/_gallery" */).then(m => m.default || m)
 const _7da7e34a = () => import('../pages/events/_event.vue' /* webpackChunkName: "pages/events/_event" */).then(m => m.default || m)
+const _74b2a4ef = () => import('../pages/form/_form.vue' /* webpackChunkName: "pages/form/_form" */).then(m => m.default || m)
 const _3332bd4b = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
 
@@ -74,9 +74,9 @@ export function createRouter () {
     scrollBehavior,
     routes: [
 		{
-			path: "/About",
-			component: _ea25fb34,
-			name: "About"
+			path: "/Request",
+			component: _6f6057b0,
+			name: "Request"
 		},
 		{
 			path: "/Team",
@@ -89,24 +89,19 @@ export function createRouter () {
 			name: "Sponsors"
 		},
 		{
-			path: "/Request",
-			component: _6f6057b0,
-			name: "Request"
-		},
-		{
 			path: "/Library",
 			component: _5f6c1054,
 			name: "Library"
 		},
 		{
+			path: "/About",
+			component: _ea25fb34,
+			name: "About"
+		},
+		{
 			path: "/Credits",
 			component: _72ba98b3,
 			name: "Credits"
-		},
-		{
-			path: "/Form",
-			component: _3c00267b,
-			name: "Form"
 		},
 		{
 			path: "/Gallery",
@@ -122,6 +117,11 @@ export function createRouter () {
 			path: "/events/:event?",
 			component: _7da7e34a,
 			name: "events-event"
+		},
+		{
+			path: "/form/:form?",
+			component: _74b2a4ef,
+			name: "form-form"
 		},
 		{
 			path: "/",
