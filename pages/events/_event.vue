@@ -1,42 +1,53 @@
 <template>
   <v-layout class="vv-container" fill-height column>
     <no-ssr>
-      <v-img height="400px"
-            :src="currentEvent.image"
-            :lazy-src="resize(currentEvent.image, 'smart')"
-            :srcset="
-            `${resize(currentEvent.image, '400x0')} 400w, ` +
+      <v-img
+        height="400px"
+        :src="currentEvent.image"
+        :lazy-src="resize(currentEvent.image, 'smart')"
+        :srcset="
+          `${resize(currentEvent.image, '400x0')} 400w, ` +
             `${resize(currentEvent.image, '800x0')} 800w, ` +
             `${resize(currentEvent.image, '1200x0')} 1200w, ` +
-            `${currentEvent.image} 1600w`">
-      </v-img>
+            `${currentEvent.image} 1600w`
+        "
+      />
     </no-ssr>
     <v-container class="indexed" fill-height>
       <v-flex xs12>
         <div class="event-wrapper">
-          <h3 class="vv-subheading font-lato text-xs-center">{{currentEvent.title}}</h3>
+          <h3 class="vv-subheading font-lato text-xs-center">
+            {{ currentEvent.title }}
+          </h3>
           <div class="card-meta">
             <p v-if="currentEvent.conference.url">
               <a :href="currentEvent.conference.url" target="_blank">
                 <i class="fas fa-link secondary--text text--lighten-2"></i>
-                {{currentEvent.conference.url}}
+                {{ currentEvent.conference.url }}
               </a>
             </p>
             <p v-if="currentEvent.date" class="secondary--text text--lighten-2">
               <i class="far fa-calendar-alt"></i>
-              {{currentEvent.date| moment('MMM Do, YYYY')}}
+              {{ currentEvent.date | moment('MMM Do, YYYY') }}
             </p>
-            <p v-if="currentEvent.location" class="secondary--text text--lighten-2">
-              <i class="fas fa-map-marker-alt"></i>
-              {{currentEvent.location}}
+            <p
+              v-if="currentEvent.location"
+              class="secondary--text text--lighten-2"
+            >
+              <i class="fas fa-map-marker-alt"></i> {{ currentEvent.location }}
             </p>
           </div>
-          <div class="text-xs-left" v-html="toHtml(currentEvent.description)"></div>
+          <div
+            class="text-xs-left"
+            v-html="toHtml(currentEvent.description)"
+          ></div>
           <div class="card-buttons">
             <v-btn
               color="card-button secondary darken-2"
               dark
-              :to="`/form/${$route.params.event}`">
+              :to="`/form/${$route.params.event}`"
+            >
+              Attendee Registration
             </v-btn>
           </div>
         </div>

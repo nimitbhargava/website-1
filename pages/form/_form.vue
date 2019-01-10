@@ -7,43 +7,65 @@
           action="https://vuevixens.us7.list-manage.com/subscribe/post?u=bb4724549551e6cf7bb5e3165&amp;id=ecd2dfeb93"
           method="post"
           class="submit-form"
-          v-model="valid">
+          v-model="valid"
+        >
           <v-text-field
             name="EMAIL"
             label="Email *"
             v-model="email"
-            :rules="emailRules"></v-text-field>
+            :rules="emailRules"
+          ></v-text-field>
           <v-text-field
             name="FNAME"
             label="Full name *"
             v-model="name"
-            :rules="nameRules"></v-text-field>
+            :rules="nameRules"
+          ></v-text-field>
           <v-text-field name="AFFIL" label="Affiliation"></v-text-field>
           <v-text-field
             name="FOOD"
-            label="Food preferences (if any)"></v-text-field>
-          <input type="text" name="CONF" class="hidden-field" :value="formEvent" />
+            label="Food preferences (if any)"
+          ></v-text-field>
+          <input
+            type="text"
+            name="CONF"
+            class="hidden-field"
+            :value="formEvent"
+          />
           <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
           <div class="hidden-field">
             <input
               type="text"
               name="b_7754f9dbbdff11682c8ff2e73_54e8642cad"
               tabindex="-1"
-              value/>
+              value
+            />
           </div>
           <v-checkbox
             color="secondary"
             v-model="gdpr"
             label="I agree to receive emails from VueVixens *"
-            :rules="gdprRules"></v-checkbox>
-          <p class="text-xs-left caption">You can unsubscribe at any time by clicking the link in the footer of our emails.</p>
-          <p class="text-xs-left caption">We use Mailchimp as our marketing platform. By clicking below to subscribe,
-            you acknowledge that your information will be transferred to Mailchimp for processing.
+            :rules="gdprRules"
+          ></v-checkbox>
+          <p class="text-xs-left caption">
+            You can unsubscribe at any time by clicking the link in the footer
+            of our emails.
+          </p>
+          <p class="text-xs-left caption">
+            We use Mailchimp as our marketing platform. By clicking below to
+            subscribe, you acknowledge that your information will be transferred
+            to Mailchimp for processing.
             <a href="https://mailchimp.com/legal/" target="_blank">
               Learn more about Mailchimp's privacy practices here.
             </a>
           </p>
-          <v-btn color="card-button secondary darken-2" dark type="submit" :disabled="!valid">Submit</v-btn>
+          <v-btn
+            color="card-button secondary darken-2"
+            dark
+            type="submit"
+            :disabled="!valid"
+            >Submit</v-btn
+          >
         </v-form>
       </v-flex>
     </v-container>
@@ -59,21 +81,19 @@ export default {
       email: '',
       name: '',
       gdpr: false,
-      nameRules: [
-        name => !!name || 'Name is required'
-      ],
+      nameRules: [name => !!name || 'Name is required'],
       emailRules: [
         email => !!email || 'Email is required',
         email =>
-            /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email) ||
-            "Email must be valid"
+          /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email) ||
+          'Email must be valid',
       ],
       gdprRules: [
-        gdpr => !!gdpr || 'Please check this checkbox to finish registration'
-      ]
+        gdpr => !!gdpr || 'Please check this checkbox to finish registration',
+      ],
     };
   },
-  methods: {}
+  methods: {},
 };
 </script>
 
@@ -94,6 +114,6 @@ export default {
 }
 
 .theme--dark.v-btn.v-btn--disabled:not(.v-btn--icon):not(.v-btn--flat) {
-  background-color: #373737!important
+  background-color: #373737 !important;
 }
 </style>
