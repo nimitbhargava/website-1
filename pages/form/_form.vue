@@ -11,11 +11,13 @@
           <v-text-field
             name="EMAIL"
             label="Email *"
-            v-model="email"></v-text-field>
+            v-model="email"
+            :rules="emailRules"></v-text-field>
           <v-text-field
             name="FNAME"
             label="Full name *"
-            v-model="name"></v-text-field>
+            v-model="name"
+            :rules="nameRules"></v-text-field>
           <v-text-field name="AFFIL" label="Affiliation"></v-text-field>
           <v-text-field
             name="FOOD"
@@ -32,7 +34,8 @@
           <v-checkbox
             color="secondary"
             v-model="gdpr"
-            label="I agree to receive emails from VueVixens organisation"></v-checkbox>
+            label="I agree to receive emails from VueVixens *"
+            :rules="gdprRules"></v-checkbox>
           <p class="text-xs-left caption">You can unsubscribe at any time by clicking the link in the footer of our emails.</p>
           <p class="text-xs-left caption">We use Mailchimp as our marketing platform. By clicking below to subscribe,
             you acknowledge that your information will be transferred to Mailchimp for processing.
@@ -40,7 +43,7 @@
               Learn more about Mailchimp's privacy practices here.
             </a>
           </p>
-          <v-btn color="card-button secondary darken-2" dark type="submit">Submit</v-btn>
+          <v-btn color="card-button secondary darken-2" dark type="submit" :disabled="!valid">Submit</v-btn>
         </v-form>
       </v-flex>
     </v-container>
@@ -51,11 +54,23 @@
 export default {
   data() {
     return {
-      valid: true,
+      valid: false,
       formEvent: this.$route.params.form,
       email: '',
       name: '',
       gdpr: false,
+      nameRules: [
+        name => !!name || 'Name is required'
+      ],
+      emailRules: [
+        email => !!email || 'Email is required',
+        email =>
+            /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email) ||
+            "Email must be valid"
+      ],
+      gdprRules: [
+        gdpr => !!gdpr || 'Please check this checkbox to finish registration'
+      ]
     };
   },
   methods: {}
@@ -76,5 +91,9 @@ export default {
 }
 .card-button {
   margin-top: 20px;
+}
+
+.theme--dark.v-btn.v-btn--disabled:not(.v-btn--icon):not(.v-btn--flat) {
+  background-color: #373737!important
 }
 </style>
