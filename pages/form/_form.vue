@@ -4,7 +4,7 @@
       <v-flex xs12>
         <h1 class="display-2 text-xs-center">Event registration form</h1>
         <v-form
-          action="https://vuevixens.us7.list-manage.com/subscribe/post?u=7754f9dbbdff11682c8ff2e73&amp;id=54e8642cad"
+          action="https://vuevixens.us7.list-manage.com/subscribe/post?u=bb4724549551e6cf7bb5e3165&amp;id=ecd2dfeb93"
           method="post"
           class="submit-form"
           v-model="valid">
