@@ -33,10 +33,10 @@
           </div>
           <div class="text-xs-left" v-html="toHtml(currentEvent.description)"></div>
           <div class="card-buttons">
-            <v-btn color="card-button secondary darken-2" dark v-for="action in currentEvent.actions"
-                   :key="action.text"
-                   :href="action.url.url" target="_blank">
-              {{action.text}}
+            <v-btn
+              color="card-button secondary darken-2"
+              dark
+              :to="`/form/${$route.params.event}`">
             </v-btn>
           </div>
         </div>
