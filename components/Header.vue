@@ -13,6 +13,9 @@
       <v-btn flat to="/library" nuxt>{{ $t("menu.library") }}</v-btn>
       <v-btn flat href="https://dev.to/vuevixens" target="_blank">Blog</v-btn>
       <v-btn flat href="https://vuevixens.threadless.com/" target="_blank">{{ $t("menu.shop") }}</v-btn>
+      <a class="github-link" flat href="https://github.com/VueVixens" target="_blank">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
     </v-toolbar-items>
     <v-toolbar-items>
       <v-menu offset-y left dark transition="slide-x-transition">
@@ -116,5 +119,14 @@ export default {
 
 .vv-toolbar {
   z-index: 5;
+}
+
+.github-link {
+  color: #fff;
+  align-self: center;
+  padding-right: 20px;
+  .fa-2x {
+    font-size: 1.5em;
+  }
 }
 </style>
