@@ -7,8 +7,16 @@
           Before we start, please tell us whether you identify as a woman
         </h1>
         <div class="actions">
-          <v-btn @click="genderQuestionAnswered = true">Yes</v-btn>
-          <v-btn @click="proceedToSorryMessage">No </v-btn>
+          <v-btn
+            color="secondary darken-2"
+            dark
+            @click="genderQuestionAnswered = true"
+          >
+            Yes
+          </v-btn>
+          <v-btn color="secondary darken-2" dark @click="proceedToSorryMessage">
+            No
+          </v-btn>
         </div>
       </v-container>
     </template>
@@ -73,18 +81,24 @@
               </a>
             </p>
             <v-btn
-              color="card-button secondary darken-2"
+              color="secondary darken-2"
               dark
               type="submit"
               :disabled="!valid"
-              >Submit</v-btn
             >
+              Submit
+            </v-btn>
           </v-form>
         </v-flex>
       </v-container>
     </template>
     <template v-else>
-      <v-container class="raised"> SORRY! </v-container>
+      <v-container class="raised">
+        <h1>Sorry, we cannot register you for this workshop</h1>
+        <div class="actions">
+          <v-btn color="secondary darken-2" dark to="/"> Back to home </v-btn>
+        </div>
+      </v-container>
     </template>
   </v-layout>
 </template>
