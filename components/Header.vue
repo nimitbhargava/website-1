@@ -12,7 +12,7 @@
       <v-btn flat to="/gallery" nuxt>{{ $t("menu.gallery") }}</v-btn>
       <v-btn flat to="/library" nuxt>{{ $t("menu.library") }}</v-btn>
       <v-btn flat href="https://dev.to/vuevixens" target="_blank">Blog</v-btn>
-      <v-btn flat href="https://vuevixens.threadless.com/" target="_blank">{{ $t("menu.shop") }}</v-btn>
+      <v-btn flat href="https://shop.vuevixens.org/" target="_blank">{{ $t("menu.shop") }}</v-btn>
       <a class="github-link" flat href="https://github.com/VueVixens" target="_blank">
         <i class="fab fa-github fa-2x"></i>
       </a>
