@@ -43,6 +43,7 @@
           ></div>
           <div class="card-buttons">
             <v-btn
+              v-if="currentEvent.registration"
               color="card-button secondary darken-2"
               dark
               :to="`/form/${$route.params.event}`"
