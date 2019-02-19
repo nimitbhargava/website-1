@@ -1,7 +1,7 @@
 export default {
   en: {
     team: 'Our Team',
-    board: `Board of Directors`,
+    board: `Advisory Board`,
     regional: 'Regional Leaders',
     chapter: 'Chapter Leaders',
   },
@@ -28,5 +28,5 @@ export default {
     board: `Conseil d'administration`,
     regional: 'Leaders régionaux',
     chapter: 'Chapter Leaders',
-  }
+  },
 };
