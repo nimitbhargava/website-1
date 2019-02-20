@@ -2,8 +2,19 @@
   <v-layout class="vv-container" fill-height>
     <v-container class="indexed">
       <v-flex xs12 class="text-xs-center">
-        <h2 class="vv-subheading font-lato text-xs-center">{{ $t("title") }}</h2>
-        <p class="vv-content title">{{ $t("subtitle") }}</p>
+        <h2 class="vv-subheading font-lato text-xs-center">{{$t('title')}}</h2>
+        <i18n path="subtitle" class="vv-content title" tag="p">
+          <a href="mailto:info@vuevixens.org" place="mail">
+            {{
+            $t('mailLink')
+            }}
+          </a>
+          <a
+            href="https://spark.adobe.com/page/FFczmvHR6Brpu/"
+            place="presskit"
+            target="blank"
+          >{{$t('presskitLink')}}</a>
+        </i18n>
       </v-flex>
       <v-container grid-list-lg v-if="!!story.content">
         <v-layout wrap>
@@ -11,13 +22,13 @@
             <v-card height="100%">
               <img :src="sponsor.img" :alt="`${sponsor.name} Logo`">
               <v-card-title justify-center>
-                <h3 class="d-block text-xs-center">{{sponsor.name}}</h3>
-                <p class="text-xs-center">{{sponsor.tagline}}</p>
-                <p class="text-xs-center">{{sponsor.description}}</p>
+                <h3 class="d-block text-xs-center">{{ sponsor.name }}</h3>
+                <p class="text-xs-center">{{ sponsor.tagline }}</p>
+                <p class="text-xs-center">{{ sponsor.description }}</p>
               </v-card-title>
               <a :href="sponsor.website.url" class="d-block text-xs-center">
                 <i class="fa fa-link" aria-hidden="true"></i>
-                {{sponsor.website.url}}
+                {{ sponsor.website.url }}
               </a>
             </v-card>
           </v-flex>
@@ -28,8 +39,8 @@
 </template>
 
 <script>
-import storyblok from '../mixins/storyblok';
-import messages from '../assets/translations/sponsors';
+import storyblok from "../mixins/storyblok";
+import messages from "../assets/translations/sponsors";
 export default {
   mixins: [storyblok],
   i18n: {
