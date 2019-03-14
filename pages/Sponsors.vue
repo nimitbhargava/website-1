@@ -24,7 +24,12 @@
           >
             {{ category.name }}
           </h3>
-          <v-layout wrap justify-center :key="category.name">
+          <v-layout
+            wrap
+            justify-center
+            :key="category.name"
+            class="category-wrapper"
+          >
             <v-flex
               xs12
               sm6
@@ -110,14 +115,10 @@ img {
       }
 
       &:not(:only-child) {
-        margin: auto -16px;
+        margin: auto 16px;
       }
     }
   }
-}
-
-.vv-subheading {
-  margin-bottom: 15px;
 }
 
 .v-card {
@@ -137,7 +138,10 @@ img {
   padding-bottom: 0;
 }
 
-// TODO: update urls to final badges
+.category-wrapper {
+  margin-bottom: 20px;
+}
+
 $sponsorTypes: ('platinum', '/assets/images/plat.png'),
   ('gold', '/assets/images/gold.png'), ('silver', '/assets/images/silver.png'),
   ('software', '/assets/images/software.png');
