@@ -1,127 +1,87 @@
 <template>
-  <v-layout
-    class="vv-container"
-    fill-height
-  >
+  <v-layout class="vv-container" fill-height>
     <v-container class="indexed">
-      <v-flex
-        xs12
-        class="text-xs-center"
-      >
-        <h2 class="vv-heading font-lato text-xs-center">{{$t('title')}}</h2>
-        <i18n
-          path="subtitle"
-          class="vv-content title"
-          tag="p"
-        >
-          <a
-            href="mailto:info@vuevixens.org"
-            place="mail"
-          >
-            {{
-            $t('mailLink')
-            }}
+      <v-flex xs12 class="text-xs-center">
+        <h2 class="vv-heading font-lato text-xs-center">{{ $t('title') }}</h2>
+        <i18n path="subtitle" class="vv-content title" tag="p">
+          <a href="mailto:info@vuevixens.org" place="mail">
+            {{ $t('mailLink') }}
           </a>
           <a
             href="https://spark.adobe.com/page/FFczmvHR6Brpu/"
             place="presskit"
             target="blank"
-          >{{$t('presskitLink')}}</a>
+            >{{ $t('presskitLink') }}</a
+          >
         </i18n>
       </v-flex>
-      <v-container
-        grid-list-lg
-        v-if="!!story.content"
-      >
-
-        <h3 class="vv-subheading font-lato text-xs-center">Platinum sponsors</h3>
-        <v-layout wrap>
-          <v-flex
-            xs12
-            sm6
-            lg4
-            v-for="sponsor in story.content.body"
-            :key="sponsor.name"
+      <v-container grid-list-lg v-if="!!story.content">
+        <template v-for="category in sponsors">
+          <h3
+            class="vv-subheading font-lato text-xs-center"
+            :key="category"
+            v-if="category.list && category.list.length"
           >
-            <v-card height="100%">
-              <img
-                :src="sponsor.img"
-                :alt="`${sponsor.name} Logo`"
-                :aria-label="sponsor.name"
-                :title="sponsor.name"
-              >
-              <v-card-title justify-center>
-                <!-- TODO: conditionally apply sponsor class / text -->
-                <div class="sponsor-type gold"></div>
-                <p class="text-xs-center">{{ sponsor.tagline }}</p>
-                <p class="text-xs-center">{{ sponsor.description }}</p>
-              </v-card-title>
-              <a
-                :href="sponsor.website.url"
-                class="d-block text-xs-center"
-              >
-                <i
-                  class="fa fa-link"
-                  aria-hidden="true"
-                ></i>
-                {{ sponsor.website.url }}
-              </a>
-
-            </v-card>
-          </v-flex>
-        </v-layout>
-
-        <!--
-          TODO: conditionally apply sponsor class / text to 'sponsor-type' div and separate tiers
-          
-          <h3 class="vv-subheading font-lato text-xs-center">Gold sponsors</h3>
-        <v-layout wrap>
-          <v-flex
-            xs12
-            sm6
-            lg4
-            v-for="sponsor in story.content.body"
-            :key="sponsor.name"
-          >
-            <v-card height="100%">
-              <img
-                :src="sponsor.img"
-                :alt="`${sponsor.name} Logo`"
-                :aria-label="sponsor.name"
-                :title="sponsor.name"
-              >
-              <v-card-title justify-center>
-                <div class="sponsor-type gold"></div>
-                <p class="text-xs-center">{{ sponsor.tagline }}</p>
-                <p class="text-xs-center">{{ sponsor.description }}</p>
-              </v-card-title>
-              <a
-                :href="sponsor.website.url"
-                class="d-block text-xs-center"
-              >
-                <i
-                  class="fa fa-link"
-                  aria-hidden="true"
-                ></i>
-                {{ sponsor.website.url }}
-              </a>
-
-            </v-card>
-          </v-flex>
-        </v-layout>-->
+            {{ category.name }}
+          </h3>
+          <v-layout wrap :key="category.name">
+            <v-flex
+              xs12
+              sm6
+              lg4
+              v-for="sponsor in category.list"
+              :key="sponsor.name"
+            >
+              <v-card height="100%">
+                <img
+                  :src="sponsor.img"
+                  :alt="`${sponsor.name} Logo`"
+                  :aria-label="sponsor.name"
+                  :title="sponsor.name"
+                />
+                <v-card-title justify-center>
+                  <div class="sponsor-type" :class="sponsor.level"></div>
+                  <p class="text-xs-center">{{ sponsor.tagline }}</p>
+                  <p class="text-xs-center">{{ sponsor.description }}</p>
+                </v-card-title>
+                <a :href="sponsor.website.url" class="d-block text-xs-center">
+                  <i class="fa fa-link" aria-hidden="true"></i>
+                  {{ sponsor.website.url }}
+                </a>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </template>
       </v-container>
     </v-container>
   </v-layout>
 </template>
 
 <script>
-import storyblok from "../mixins/storyblok";
-import messages from "../assets/translations/sponsors";
+import storyblok from '../mixins/storyblok';
+import messages from '../assets/translations/sponsors';
 export default {
   mixins: [storyblok],
   i18n: {
-    messages
-  }
+    messages,
+  },
+  methods: {
+    selectSponsorsByLevel(level) {
+      if (level === 'partner') {
+        return this.story.content.body.filter(sponsor => !sponsor.level);
+      }
+      return this.story.content.body.filter(sponsor => sponsor.level === level);
+    },
+  },
+  computed: {
+    sponsors() {
+      const levels = ['Platinum', 'Gold', 'Silver', 'Software', 'Partner'];
+      return levels.map(level => ({
+        name: level === 'Partner' ? 'Partners' : `${level} sponsors`,
+        list: this.selectSponsorsByLevel(level.toLowerCase()),
+      }));
+    },
+  },
 };
 </script>
 
@@ -155,12 +115,6 @@ img {
   }
 }
 
-.layout.wrap {
-  & + .vv-subheading {
-    margin-top: 40px;
-  }
-}
-
 .vv-subheading {
   margin-bottom: 15px;
 }
@@ -183,9 +137,9 @@ img {
 }
 
 // TODO: update urls to final badges
-$sponsorTypes: ("gold", "/assets/images/goldbadge-temp.png"),
-  ("silver", "/assets/images/goldbadge-temp.png"),
-  ("bronze", "/assets/images/goldbadge-temp.png");
+$sponsorTypes: ('platinum', '/assets/images/plat.png'),
+  ('gold', '/assets/images/gold.png'), ('silver', '/assets/images/silver.png'),
+  ('software', '/assets/images/software.png');
 
 .sponsor-type {
   width: 50px;
