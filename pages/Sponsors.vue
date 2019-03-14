@@ -24,7 +24,7 @@
           >
             {{ category.name }}
           </h3>
-          <v-layout wrap :key="category.name">
+          <v-layout wrap justify-center :key="category.name">
             <v-flex
               xs12
               sm6
