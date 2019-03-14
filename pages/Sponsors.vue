@@ -116,6 +116,7 @@ img {
 
       &:not(:only-child) {
         margin: auto 16px;
+        margin-bottom: 20px;
       }
     }
   }
@@ -136,10 +137,6 @@ img {
 
 .v-card__title {
   padding-bottom: 0;
-}
-
-.category-wrapper {
-  margin-bottom: 20px;
 }
 
 $sponsorTypes: ('platinum', '/assets/images/plat.png'),
