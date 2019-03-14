@@ -67,6 +67,7 @@ export default {
   },
   methods: {
     selectSponsorsByLevel(level) {
+      level = level.toLowerCase();
       if (level === 'partner') {
         return this.story.content.body.filter(sponsor => !sponsor.level);
       }
@@ -78,7 +79,7 @@ export default {
       const levels = ['Platinum', 'Gold', 'Silver', 'Software', 'Partner'];
       return levels.map(level => ({
         name: level === 'Partner' ? 'Partners' : `${level} sponsors`,
-        list: this.selectSponsorsByLevel(level.toLowerCase()),
+        list: this.selectSponsorsByLevel(level),
       }));
     },
   },
