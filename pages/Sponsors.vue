@@ -25,6 +25,7 @@
             {{ category.name }}
           </h3>
           <v-layout
+            v-if="category.list && category.list.length"
             wrap
             justify-center
             :key="category.name"
