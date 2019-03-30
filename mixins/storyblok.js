@@ -31,6 +31,7 @@ export default {
     const response = await context.app.$storyapi.get(path, {
       version,
     }).catch(err => {
+      console.log(err);
       return context.error({ statusCode: 404 });
     });
 
