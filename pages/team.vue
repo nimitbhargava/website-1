@@ -6,7 +6,7 @@
       </v-flex>
       <v-container grid-list-lg v-if="!!story.content">
         <v-layout wrap justify-center>
-          <v-flex xs12 sm6 lg4 v-for="member in story.content.body" :key="member.name" v-if="member.staff">
+          <v-flex xs12 sm6 lg4 v-for="member in staffMembers" :key="member.name">
             <v-card height="100%">
               <no-ssr>
                 <v-img height="400px" :src="member.img" class="grey lighten-2">
@@ -38,8 +38,7 @@
       </v-flex>
       <v-container grid-list-lg v-if="!!story.content">
         <v-layout wrap justify-center>
-          <v-flex xs12 sm6 lg4 v-for="member in story.content.body" :key="member.name"
-                  v-if="!member.staff && !member.chapter && !member.regional">
+          <v-flex xs12 sm6 lg4 v-for="member in boardMembers" :key="member.name">
             <v-card height="100%">
               <no-ssr>
                 <v-img height="400px" :src="member.img" class="grey lighten-2">
@@ -71,8 +70,7 @@
       </v-flex>
       <v-container grid-list-lg v-if="!!story.content">
         <v-layout wrap justify-center>
-          <v-flex xs12 sm4 lg3 v-for="member in story.content.body" :key="member.name"
-                  v-if="member.chapter">
+          <v-flex xs12 sm4 lg3 v-for="member in chapterLeaders" :key="member.name">
             <v-card height="100%">
               <no-ssr>
                 <v-img height="200px" :src="member.img || '/images/fox-placeholder.jpg'" class="grey lighten-2">
@@ -105,6 +103,17 @@ export default {
   i18n: {
     messages,
   },
+  computed: {
+    staffMembers() {
+      return this.story.content.body.filter(member => member.staff)
+    },
+    boardMembers() {
+      return this.story.content.body.filter(member => !member.staff && !member.chapter && !member.regional)
+    },
+    chapterLeaders() {
+      return this.story.content.body.filter(member => member.chapter)
+    }
+  }
 };
 </script>
 
