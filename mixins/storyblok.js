@@ -9,7 +9,7 @@ export default {
   data() {
     return {
       story: {},
-      loading: false,
+      loading: false
     };
   },
   i18n: {},
@@ -21,18 +21,23 @@ export default {
     },
     listener(locale) {
       this.loadStory(locale);
-    },
+    }
   },
   async asyncData(context) {
     let version =
       context.query._storyblok || context.isDev ? 'draft' : 'published';
     const path = formatPath(context.route.path, context.app.i18n.locale);
 
-    const response = await context.app.$storyapi.get(path, {
-      version,
-    }).catch(err => {
-      return context.error({ statusCode: 404 });
-    });
+    const response = await context.app.$storyapi
+      .get(path, {
+        version
+      })
+      .catch(res => {
+        context.error({
+          statusCode: res.response.status,
+          message: res.response.data
+        });
+      });
 
     return response.data;
   },
@@ -48,5 +53,5 @@ export default {
   },
   beforeDestroy() {
     this.$bus.$off('changeLocale', this.listener);
-  },
+  }
 };
