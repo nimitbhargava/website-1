@@ -19,7 +19,7 @@
         <template v-for="category in sponsors">
           <h3
             class="vv-subheading font-lato text-xs-center"
-            :key="category"
+            :key="category.name"
             v-if="category.list && category.list.length"
           >
             {{ category.name }}
