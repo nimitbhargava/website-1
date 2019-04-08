@@ -13,7 +13,7 @@
             >{{$t('heading.description')}}</h2>
             <v-flex class="vv-cta">
               <v-btn
-                href="https://vuevixens.github.io/docs/workshop/"
+                href="https://vue-vixens-workshop.netlify.com/"
                 target="_blank"
                 color="accent darken-1"
               >{{$t('heading.workshops')}}</v-btn>
