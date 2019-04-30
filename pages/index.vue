@@ -28,6 +28,7 @@
       </v-container>
     </v-parallax>
     <VVAnnouncements v-if="announcements && announcements.length" :announcements="announcements"/>
+    <VVMeetups title="Meetups" loadingMessage="Checking for meetups..." laterMessage="No meetups found, check back later?"/>
   </div>
 </template>
 
@@ -35,12 +36,15 @@
 import storyblok from "../mixins/storyblok";
 import messages from "../assets/translations/home";
 import VVAnnouncements from "../components/Announcements";
+import VVMeetups from "../components/Meetups";
 
 export default {
   mixins: [storyblok],
   components: {
-    VVAnnouncements
+    VVAnnouncements,
+    VVMeetups
   },
+
   computed: {
     announcements() {
       return this.story.content.body;
