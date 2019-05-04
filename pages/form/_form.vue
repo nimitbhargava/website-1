@@ -7,16 +7,8 @@
           Before we start, please tell us whether you identify as a woman
         </h1>
         <div class="actions">
-          <v-btn
-            color="secondary darken-2"
-            dark
-            @click="genderQuestionAnswered = true"
-          >
-            Yes
-          </v-btn>
-          <v-btn color="secondary darken-2" dark @click="proceedToSorryMessage">
-            No
-          </v-btn>
+          <v-btn color="secondary darken-2" dark @click="genderQuestionAnswered = true">Yes</v-btn>
+          <v-btn color="secondary darken-2" dark @click="proceedToSorryMessage">No</v-btn>
         </div>
       </v-container>
     </template>
@@ -30,37 +22,14 @@
             class="submit-form"
             v-model="valid"
           >
-            <v-text-field
-              name="EMAIL"
-              label="Email *"
-              v-model="email"
-              :rules="emailRules"
-            ></v-text-field>
-            <v-text-field
-              name="FNAME"
-              label="Full name *"
-              v-model="name"
-              :rules="nameRules"
-            ></v-text-field>
+            <v-text-field name="EMAIL" label="Email *" v-model="email" :rules="emailRules"></v-text-field>
+            <v-text-field name="FNAME" label="Full name *" v-model="name" :rules="nameRules"></v-text-field>
             <v-text-field name="AFFIL" label="Affiliation"></v-text-field>
-            <v-text-field
-              name="FOOD"
-              label="Food preferences (if any)"
-            ></v-text-field>
-            <input
-              type="text"
-              name="CONF"
-              class="hidden-field"
-              :value="formEvent"
-            />
+            <v-text-field name="FOOD" label="Food preferences (if any)"></v-text-field>
+            <input type="text" name="CONF" class="hidden-field" :value="formEvent">
             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
             <div class="hidden-field">
-              <input
-                type="text"
-                name="b_7754f9dbbdff11682c8ff2e73_54e8642cad"
-                tabindex="-1"
-                value
-              />
+              <input type="text" name="b_7754f9dbbdff11682c8ff2e73_54e8642cad" tabindex="-1" value>
             </div>
             <v-checkbox
               color="secondary"
@@ -76,18 +45,12 @@
               We use Mailchimp as our marketing platform. By clicking below to
               subscribe, you acknowledge that your information will be
               transferred to Mailchimp for processing.
-              <a href="https://mailchimp.com/legal/" target="_blank">
-                Learn more about Mailchimp's privacy practices here.
-              </a>
+              <a
+                href="https://mailchimp.com/legal/"
+                target="_blank"
+              >Learn more about Mailchimp's privacy practices here.</a>
             </p>
-            <v-btn
-              color="secondary darken-2"
-              dark
-              type="submit"
-              :disabled="!valid"
-            >
-              Submit
-            </v-btn>
+            <v-btn color="secondary darken-2" dark type="submit" :disabled="!valid">Submit</v-btn>
           </v-form>
         </v-flex>
       </v-container>
@@ -96,7 +59,7 @@
       <v-container class="raised">
         <h1>Sorry, we cannot register you for this workshop</h1>
         <div class="actions">
-          <v-btn color="secondary darken-2" dark to="/"> Back to home </v-btn>
+          <v-btn color="secondary darken-2" dark to="/">Back to home</v-btn>
         </div>
       </v-container>
     </template>
@@ -109,29 +72,29 @@ export default {
     return {
       valid: false,
       formEvent: this.$route.params.form,
-      email: '',
-      name: '',
+      email: "",
+      name: "",
       gdpr: false,
-      nameRules: [name => !!name || 'Name is required'],
+      nameRules: [name => !!name || "Name is required"],
       emailRules: [
-        email => !!email || 'Email is required',
+        email => !!email || "Email is required",
         email =>
           /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email) ||
-          'Email must be valid',
+          "Email must be valid"
       ],
       gdprRules: [
-        gdpr => !!gdpr || 'Please check this checkbox to finish registration',
+        gdpr => !!gdpr || "Please check this checkbox to finish registration"
       ],
       genderQuestionAnswered: false,
-      showSorryMessage: false,
+      showSorryMessage: false
     };
   },
   methods: {
     proceedToSorryMessage() {
       this.genderQuestionAnswered = true;
       this.showSorryMessage = true;
-    },
-  },
+    }
+  }
 };
 </script>
 

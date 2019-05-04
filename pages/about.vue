@@ -6,9 +6,10 @@
       </v-flex>
       <v-flex xs12 v-if="!!story.content">
         <template v-for="(element, index) in story.content.body">
-          <h2 class="vv-subheading font-lato text-xs-center" :key="element.title + index">
-            {{ element.title }}
-          </h2>
+          <h2
+            class="vv-subheading font-lato text-xs-center"
+            :key="element.title + index"
+          >{{ element.title }}</h2>
           <div class="about-content" v-html="toHtml(element.content)" :key="element.title"></div>
         </template>
       </v-flex>
@@ -17,19 +18,19 @@
 </template>
 
 <script>
-import messages from '../assets/translations/about';
-import storyblok from '../mixins/storyblok';
-import { markdown } from 'markdown';
+import messages from "../assets/translations/about";
+import storyblok from "../mixins/storyblok";
+import { markdown } from "markdown";
 export default {
   mixins: [storyblok],
   i18n: {
-    messages,
+    messages
   },
   methods: {
     toHtml(text) {
       return markdown.toHTML(text);
-    },
-  },
+    }
+  }
 };
 </script>
 

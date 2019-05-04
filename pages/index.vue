@@ -28,7 +28,11 @@
       </v-container>
     </v-parallax>
     <VVAnnouncements v-if="announcements && announcements.length" :announcements="announcements"/>
-    <VVMeetups title="Meetups" loadingMessage="Checking for meetups..." laterMessage="No meetups found, check back later?"/>
+    <VVMeetups
+      title="Meetups"
+      loadingMessage="Checking for meetups..."
+      laterMessage="No meetups found, check back later?"
+    />
   </div>
 </template>
 
