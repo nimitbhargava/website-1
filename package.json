@@ -21,14 +21,14 @@
     "flag-icon-css": "^3.0.0",
     "markdown": "^0.5.0",
     "node-sass": "^4.9.1",
-    "nuxt": "^1.0.0",
+    "nuxt": "^2.6.0",
     "sass-loader": "^7.0.3",
     "storyblok-nuxt": "0.0.5",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue-i18n": "^8.0.0",
     "vue-moment": "^4.0.0",
-    "vuetify": "1.3.0-alpha.1"
+    "vuetify": "1.5.14"
   },
   "devDependencies": {
     "@nuxtjs/axios": "^5.3.6",

@@ -16,7 +16,7 @@
         <template v-for="category in sponsors">
           <h3
             class="vv-subheading font-lato text-xs-center"
-            :key="category"
+            :key="`category-${category.name}`"
             v-if="category.list && category.list.length"
           >{{ category.name }}</h3>
           <v-layout
@@ -129,9 +129,8 @@ img {
   padding-bottom: 0;
 }
 
-$sponsorTypes: ("platinum", "/assets/images/plat.png"),
-  ("gold", "/assets/images/gold.png"), ("silver", "/assets/images/silver.png"),
-  ("software", "/assets/images/software.png");
+$sponsorTypes: ("platinum", "/images/plat.png"), ("gold", "/images/gold.png"),
+  ("silver", "/images/silver.png"), ("software", "/images/software.png");
 
 .sponsor-type {
   width: 50px;
