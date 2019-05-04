@@ -26,9 +26,6 @@ export default {
       story: {}
     };
   },
-  created() {
-    this.$bus.$on("changeLocale", locale => (this.$i18n.locale = locale));
-  },
   methods: {
     toggleDrawer(event) {
       this.showDrawer = event;

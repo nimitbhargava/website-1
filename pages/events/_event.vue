@@ -4,7 +4,7 @@
       <v-layout align-center justify-end column wrap>
         <h1 class="primary--text font-lato">{{currentEvent.city}}</h1>
         <h2 class="primary--text font-lato">{{currentEvent.date | moment('MMM Do')}}</h2>
-        <p class="mb-0 font-weight-medium">
+        <p class="mt-2 mb-0 font-weight-medium">
           <i class="fas fa-map-marker-alt mr-2"></i>
           {{currentEvent.location}}
         </p>
@@ -18,6 +18,7 @@
             v-if="currentEvent.callForSpeakersUrl"
             :href="currentEvent.callForSpeakersUrl"
             color="primary darken-1"
+            target="_blank"
           >Call for speakers</v-btn>
         </div>
       </v-layout>
@@ -30,7 +31,7 @@
         <v-flex xs12 sm12 px-5 v-html="toHtml(currentEvent.description)"></v-flex>
         <v-flex xs12 sm12 px-5 v-if="currentEvent.schedule">
           <h3 class="headline-1 mb-2">Schedule</h3>
-          <div v-html="toHtml(currentEvent.schedule)"></div>
+          <div class="schedule" v-html="toHtml(currentEvent.schedule)"></div>
         </v-flex>
       </v-layout>
     </v-container>
@@ -44,7 +45,7 @@
     <!-- mentors section -->
     <VVEventMembers
       v-if="currentEvent.mentors && currentEvent.mentors.length"
-      :members="currentEvent.speakers"
+      :members="currentEvent.mentors"
     />
     <v-divider></v-divider>
     <!-- end mentors section -->
@@ -53,11 +54,11 @@
       <h1 class="text-xs-center primary--text font-lato ma-3">Sponsors</h1>
       <v-layout row wrap justify-space-around>
         <v-flex xs12 sm3 v-for="sponsor in currentEvent.sponsors" :key="sponsor.name">
-          <v-card class="vv-day-sponsor px-4 mb-3">
-            <a :href="sponsor.link" target="_blank">
-              <img :src="sponsor.logo" class="vv-day-sponsor-logo">
+          <div class="vv-day-sponsor px-4 mb-3">
+            <a :href="sponsor.website" target="_blank">
+              <img :src="sponsor.img" class="vv-day-sponsor-logo">
             </a>
-          </v-card>
+          </div>
         </v-flex>
       </v-layout>
     </v-container>
@@ -95,11 +96,11 @@ export default {
 
 <style lang="scss">
 .vv-day-hero img {
-  filter: brightness(50%);
+  filter: brightness(35%);
 }
 </style>
 
-<style lang="scss">
+<style scoped lang="scss">
 .vv-day {
   &-hero {
     text-align: center;
@@ -112,6 +113,12 @@ export default {
     &-logo {
       max-width: 100%;
     }
+  }
+}
+
+.schedule {
+  /deep/ p {
+    margin: 0;
   }
 }
 </style>

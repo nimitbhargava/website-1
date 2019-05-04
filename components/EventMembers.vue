@@ -19,6 +19,7 @@
             <a
               class="subheading text-xs-center"
               v-if="member.twitter"
+              target="_blank"
               :href="`http://www.twitter.com/${member.twitter}`"
             >
               <i class="fab fa-twitter"></i>
@@ -41,3 +42,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+a,
+p {
+  width: 100%;
+}
+</style>
