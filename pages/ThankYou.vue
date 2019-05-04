@@ -8,9 +8,7 @@
         to="/"
         color="card-button secondary darken-2"
         dark
-      >
-        Back to home
-      </v-btn>
+      >Back to home</v-btn>
     </v-container>
   </v-layout>
 </template>

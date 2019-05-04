@@ -85,16 +85,6 @@ module.exports = {
   loading: { color: '#3B8070' },
   build: {
     vendor: ['vue-i18n'],
-    extend(config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-        });
-      }
-    },
   },
   axios: {
     proxy: true,
