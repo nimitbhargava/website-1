@@ -9,13 +9,22 @@
         <v-container grid-list-lg v-else-if="meetups.length !== 0 && !loading">
           <v-layout wrap>
             <v-flex xs12 sm4 md3 :key="meetup.name" v-for="meetup in meetups">
-              <v-card class="meetup-item" hover nuxt :href="meetup.link" target="_blank">
-                <v-layout fill-height align-center justify-center ma-0>
+              <v-card
+                class="meetup-item"
+                hover
+                nuxt
+                :href="meetup.link"
+                target="_blank"
+                height="100%"
+              >
+                <v-layout fill-height align-content-space-between justify-center ma-0>
                   <v-flex xs12 class="meetup-item__content">
-                    <h3 class="headline meetup-item__title">{{meetup.name}}</h3>
-                    <span
-                      class="meetup-item__subtitle meetup-item__subtitle--city text--primary"
-                    >{{ meetup.venue.city }}</span>
+                    <div>
+                      <h3 class="headline meetup-item__title">{{meetup.name}}</h3>
+                      <span
+                        class="meetup-item__subtitle meetup-item__subtitle--city text--primary"
+                      >{{ meetup.venue.city }}</span>
+                    </div>
                     <span
                       class="meetup-item__subtitle meetup-item__subtitle--date"
                     >{{ meetup.local_date | moment('MMM Do')}}</span>
