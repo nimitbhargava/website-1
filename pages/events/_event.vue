@@ -38,69 +38,14 @@
     <!-- end info section -->
     <!-- speakers section -->
     <div v-if="currentEvent.speakers && currentEvent.speakers.length" class="secondary darken-2">
-      <v-container pa-5>
-        <h1 class="text-xs-center ma-3 white--text font-lato">Speakers</h1>
-        <v-layout wrap justify-space-around>
-          <v-flex xs12 sm3 md2 pa-2 v-for="speaker in currentEvent.speakers" :key="speaker.name">
-            <v-card>
-              <v-img
-                height="150px"
-                :alt="`${speaker.name} picture`"
-                :src="speaker.picture"
-                class="grey lighten-2"
-              >
-                <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
-                  <v-progress-circular indeterminate color="grey darken-5"></v-progress-circular>
-                </v-layout>
-              </v-img>
-              <v-card-title justify-center>
-                <p class="heading text-xs-center mb-1">{{speaker.name}}</p>
-                <a
-                  class="subheading text-xs-center"
-                  v-if="speaker.twitter"
-                  :href="`http://www.twitter.com/${speaker.twitter}`"
-                >
-                  <i class="fab fa-twitter"></i>
-                  @{{speaker.twitter}}
-                </a>
-              </v-card-title>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
+      <VVEventMembers :members="currentEvent.speakers"/>
     </div>
     <!-- end speakers section -->
     <!-- mentors section -->
-    <v-container v-if="currentEvent.mentors && currentEvent.mentors.length" pa-5>
-      <h1 class="text-xs-center ma-3 primary--text font-lato">Mentors</h1>
-      <v-layout wrap justify-space-around>
-        <v-flex xs12 sm3 md2 pa-2 v-for="mentor in currentEvent.mentors" :key="mentor.name">
-          <v-card>
-            <v-img
-              height="150px"
-              :alt="`${mentor.name} picture`"
-              :src="mentor.picture"
-              class="grey lighten-2"
-            >
-              <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
-                <v-progress-circular indeterminate color="grey darken-5"></v-progress-circular>
-              </v-layout>
-            </v-img>
-            <v-card-title justify-center>
-              <p class="heading mb-1 text-xs-center">{{mentor.name}}</p>
-              <a
-                class="subheading text-xs-center"
-                v-if="mentor.twitter"
-                :href="`http://www.twitter.com/${mentor.twitter}`"
-              >
-                <i class="fab fa-twitter"></i>
-                @{{mentor.twitter}}
-              </a>
-            </v-card-title>
-          </v-card>
-        </v-flex>
-      </v-layout>
-    </v-container>
+    <VVEventMembers
+      v-if="currentEvent.mentors && currentEvent.mentors.length"
+      :members="currentEvent.speakers"
+    />
     <v-divider></v-divider>
     <!-- end mentors section -->
     <!-- sponsors section -->
@@ -121,11 +66,15 @@
 </template>
 
 <script>
-import storyblok from "../../mixins/storyblok";
 import { markdown } from "markdown";
+import storyblok from "../../mixins/storyblok";
+import VVEventMembers from "../../components/EventMembers.vue";
 
 export default {
   mixins: [storyblok],
+  components: {
+    VVEventMembers
+  },
   computed: {
     currentEvent() {
       return this.story.content;
