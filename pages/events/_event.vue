@@ -43,26 +43,27 @@
     </div>
     <!-- end speakers section -->
     <!-- mentors section -->
-    <h1 class="text-xs-center primary--text font-lato mt-3">Mentors</h1>
-    <VVEventMembers
-      v-if="currentEvent.mentors && currentEvent.mentors.length"
-      :members="currentEvent.mentors"
-    />
-    <v-divider v-if="currentEvent.sponsors && currentEvent.sponsors.length"></v-divider>
+    <template v-if="currentEvent.mentors && currentEvent.mentors.length">
+      <h1 class="text-xs-center primary--text font-lato mt-3">Mentors</h1>
+      <VVEventMembers :members="currentEvent.mentors"/>
+    </template>
     <!-- end mentors section -->
     <!-- sponsors section -->
-    <h1 class="text-xs-center primary--text font-lato mt-3">Sponsors</h1>
-    <v-container v-if="currentEvent.sponsors && currentEvent.sponsors.length" pa-4>
-      <v-layout row wrap justify-space-around>
-        <v-flex xs12 sm3 v-for="sponsor in currentEvent.sponsors" :key="sponsor.name">
-          <div class="vv-day-sponsor px-4 mb-3">
-            <a :href="sponsor.website" target="_blank">
-              <img :src="sponsor.img" class="vv-day-sponsor-logo">
-            </a>
-          </div>
-        </v-flex>
-      </v-layout>
-    </v-container>
+    <template v-if="currentEvent.sponsors && currentEvent.sponsors.length">
+      <v-divider></v-divider>
+      <h1 class="text-xs-center primary--text font-lato mt-3">Sponsors</h1>
+      <v-container pa-4>
+        <v-layout row wrap justify-space-around>
+          <v-flex xs12 sm3 v-for="sponsor in currentEvent.sponsors" :key="sponsor.name">
+            <div class="vv-day-sponsor px-4 mb-3">
+              <a :href="sponsor.website" target="_blank">
+                <img :src="sponsor.img" class="vv-day-sponsor-logo">
+              </a>
+            </div>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </template>
     <!-- end sponsors section -->
   </v-layout>
 </template>
