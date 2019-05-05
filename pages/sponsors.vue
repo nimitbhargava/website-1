@@ -4,26 +4,21 @@
       <v-flex xs12 class="text-xs-center">
         <h2 class="vv-heading font-lato text-xs-center">{{ $t('title') }}</h2>
         <i18n path="subtitle" class="vv-content title" tag="p">
-          <a href="mailto:info@vuevixens.org" place="mail">
-            {{ $t('mailLink') }}
-          </a>
+          <a href="mailto:info@vuevixens.org" place="mail">{{ $t('mailLink') }}</a>
           <a
             href="https://spark.adobe.com/page/FFczmvHR6Brpu/"
             place="presskit"
             target="blank"
-            >{{ $t('presskitLink') }}</a
-          >
+          >{{ $t('presskitLink') }}</a>
         </i18n>
       </v-flex>
       <v-container grid-list-lg v-if="!!story.content">
         <template v-for="category in sponsors">
           <h3
             class="vv-subheading font-lato text-xs-center"
-            :key="category"
+            :key="`category-${category.name}`"
             v-if="category.list && category.list.length"
-          >
-            {{ category.name }}
-          </h3>
+          >{{ category.name }}</h3>
           <v-layout
             v-if="category.list && category.list.length"
             wrap
@@ -31,20 +26,14 @@
             :key="category.name"
             class="category-wrapper"
           >
-            <v-flex
-              xs12
-              sm6
-              lg4
-              v-for="sponsor in category.list"
-              :key="sponsor.name"
-            >
+            <v-flex xs12 sm6 lg4 v-for="sponsor in category.list" :key="sponsor.name">
               <v-card height="100%">
                 <img
                   :src="sponsor.img"
                   :alt="`${sponsor.name} Logo`"
                   :aria-label="sponsor.name"
                   :title="sponsor.name"
-                />
+                >
                 <v-card-title justify-center>
                   <div class="sponsor-type" :class="sponsor.level"></div>
                   <p class="text-xs-center">{{ sponsor.tagline }}</p>
@@ -64,31 +53,31 @@
 </template>
 
 <script>
-import storyblok from '../mixins/storyblok';
-import messages from '../assets/translations/sponsors';
+import storyblok from "../mixins/storyblok";
+import messages from "../assets/translations/sponsors";
 export default {
   mixins: [storyblok],
   i18n: {
-    messages,
+    messages
   },
   methods: {
     selectSponsorsByLevel(level) {
       level = level.toLowerCase();
-      if (level === 'partner') {
+      if (level === "partner") {
         return this.story.content.body.filter(sponsor => !sponsor.level);
       }
       return this.story.content.body.filter(sponsor => sponsor.level === level);
-    },
+    }
   },
   computed: {
     sponsors() {
-      const levels = ['Platinum', 'Gold', 'Silver', 'Software', 'Partner'];
+      const levels = ["Platinum", "Gold", "Silver", "Software", "Partner"];
       return levels.map(level => ({
-        name: level === 'Partner' ? 'Partners' : `${level} sponsors`,
-        list: this.selectSponsorsByLevel(level),
+        name: level === "Partner" ? "Partners" : `${level} sponsors`,
+        list: this.selectSponsorsByLevel(level)
       }));
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -140,9 +129,8 @@ img {
   padding-bottom: 0;
 }
 
-$sponsorTypes: ('platinum', '/assets/images/plat.png'),
-  ('gold', '/assets/images/gold.png'), ('silver', '/assets/images/silver.png'),
-  ('software', '/assets/images/software.png');
+$sponsorTypes: ("platinum", "/images/plat.png"), ("gold", "/images/gold.png"),
+  ("silver", "/images/silver.png"), ("software", "/images/software.png");
 
 .sponsor-type {
   width: 50px;

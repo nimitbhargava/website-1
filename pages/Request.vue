@@ -11,10 +11,12 @@
           <li>{{ $t("li3") }}</li>
         </ul>
         <div class="button-wrapper text-xs-center">
-          <v-btn color="secondary darken-2" dark
-                 href="https://ladeezfirstmedia.typeform.com/to/dlOUZe" target="_blank">
-            {{ $t("button") }}
-          </v-btn>
+          <v-btn
+            color="secondary darken-2"
+            dark
+            href="https://ladeezfirstmedia.typeform.com/to/dlOUZe"
+            target="_blank"
+          >{{ $t("button") }}</v-btn>
         </div>
       </v-flex>
     </v-container>
@@ -22,20 +24,20 @@
 </template>
 
 <script>
-  import messages from '../assets/translations/request'
-  export default {
-    i18n: {
-      messages
-    }
+import messages from "../assets/translations/request";
+export default {
+  i18n: {
+    messages
   }
+};
 </script>
 
 <style scoped>
-  .button-wrapper {
-    padding-top: 30px;
-  }
+.button-wrapper {
+  padding-top: 30px;
+}
 
-  p {
-    padding-bottom: 15px;
-  }
+p {
+  padding-bottom: 15px;
+}
 </style>

@@ -4,10 +4,7 @@
       <v-flex xs12 sm4 md3 v-for="(event, index) in events" :key="`${event.name}-${index}`">
         <v-card class="vv-card" hover :to="event.link.cached_url" nuxt>
           <no-ssr>
-            <v-img
-              class="white--text vv-card-image grey lighten-2"
-              height="200px"
-              :src="event.img">
+            <v-img class="white--text vv-card-image grey lighten-2" height="200px" :src="event.img">
               <v-layout fill-height align-center justify-center ma-0>
                 <v-flex xs12 d-flex align-center justify-center class="event-name">
                   <div>
@@ -26,7 +23,7 @@
 
 <script>
 export default {
-  props: ['events'],
+  props: ["events"]
 };
 </script>
 
@@ -35,7 +32,7 @@ export default {
   .v-image {
     &:after {
       position: absolute;
-      content: '';
+      content: "";
       z-index: 1;
       top: 0;
       left: 0;
