@@ -1,6 +1,6 @@
 <template>
-  <v-layout v-if="!!currentEvent" fill-height column>
-    <v-parallax class="vv-day-hero" :src="currentEvent.image">
+  <v-layout v-if="!!currentEvent" column>
+    <v-parallax class="vv-day-hero" :src="currentEvent.image" height="300">
       <v-layout align-center justify-end column wrap>
         <h1 class="primary--text font-lato">{{currentEvent.city}}</h1>
         <h2 class="primary--text font-lato">{{currentEvent.date | moment('MMM Do')}}</h2>
@@ -25,33 +25,34 @@
     </v-parallax>
     <!-- end hero -->
     <!-- info section -->
-    <v-container pa-5>
+    <v-container grid-list-xl>
       <h1 class="text-xs-center ma-3 primary--text font-lato">{{currentEvent.title}}</h1>
-      <v-layout row justify-center>
-        <v-flex xs12 sm12 px-5 v-html="toHtml(currentEvent.description)"></v-flex>
-        <v-flex xs12 sm12 px-5 v-if="currentEvent.schedule">
+      <v-layout row wrap justify-center>
+        <v-flex xs12 :sm6="!!currentEvent.schedule" v-html="toHtml(currentEvent.description)"></v-flex>
+        <v-flex xs12 sm6 v-if="currentEvent.schedule">
           <h3 class="headline-1 mb-2">Schedule</h3>
           <div class="schedule" v-html="toHtml(currentEvent.schedule)"></div>
         </v-flex>
       </v-layout>
     </v-container>
-    <v-divider></v-divider>
     <!-- end info section -->
     <!-- speakers section -->
     <div v-if="currentEvent.speakers && currentEvent.speakers.length" class="secondary darken-2">
+      <h1 class="text-xs-center mt-3 white--text font-lato">Speakers</h1>
       <VVEventMembers :members="currentEvent.speakers"/>
     </div>
     <!-- end speakers section -->
     <!-- mentors section -->
+    <h1 class="text-xs-center primary--text font-lato mt-3">Mentors</h1>
     <VVEventMembers
       v-if="currentEvent.mentors && currentEvent.mentors.length"
       :members="currentEvent.mentors"
     />
-    <v-divider></v-divider>
+    <v-divider v-if="currentEvent.sponsors && currentEvent.sponsors.length"></v-divider>
     <!-- end mentors section -->
     <!-- sponsors section -->
-    <v-container v-if="currentEvent.sponsors && currentEvent.sponsors.length" pa-5>
-      <h1 class="text-xs-center primary--text font-lato ma-3">Sponsors</h1>
+    <h1 class="text-xs-center primary--text font-lato mt-3">Sponsors</h1>
+    <v-container v-if="currentEvent.sponsors && currentEvent.sponsors.length" pa-4>
       <v-layout row wrap justify-space-around>
         <v-flex xs12 sm3 v-for="sponsor in currentEvent.sponsors" :key="sponsor.name">
           <div class="vv-day-sponsor px-4 mb-3">

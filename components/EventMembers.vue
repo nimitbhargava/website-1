@@ -1,13 +1,12 @@
 <template>
-  <v-container pa-5>
-    <h1 class="text-xs-center ma-3 white--text font-lato">Speakers</h1>
+  <v-container pt-4 pb-5>
     <v-layout wrap justify-space-around>
       <v-flex xs12 sm3 md2 pa-2 v-for="member in members" :key="member.name">
         <v-card>
           <v-img
             height="150px"
             :alt="`${member.name} picture`"
-            :src="member.picture"
+            :src="member.img"
             class="grey lighten-2"
           >
             <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
