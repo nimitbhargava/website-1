@@ -16,6 +16,7 @@
         href="mailto:info@vuevixens.org"
         target="_blank"
       >{{ $t("contact") }}</v-btn>
+      <v-btn color="white" flat round to="/about">{{ $t("charity") }}</v-btn>
     </v-layout>
     <v-layout justify-end align-center row wrap>
       <a href="https://tinyletter.com/VueVixens" target="_blank">
