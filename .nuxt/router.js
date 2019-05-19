@@ -10,7 +10,6 @@ const _6f6057b0 = () => interopDefault(import('../pages/Request.vue' /* webpackC
 const _ec2787a0 = () => interopDefault(import('../pages/sponsors.vue' /* webpackChunkName: "pages/sponsors" */))
 const _8f14f918 = () => interopDefault(import('../pages/team.vue' /* webpackChunkName: "pages/team" */))
 const _6f2ad2e8 = () => interopDefault(import('../pages/ThankYou.vue' /* webpackChunkName: "pages/ThankYou" */))
-const _a437ec6c = () => interopDefault(import('../pages/events/vue-vixens-day.vue' /* webpackChunkName: "pages/events/vue-vixens-day" */))
 const _7da7e34a = () => interopDefault(import('../pages/events/_event.vue' /* webpackChunkName: "pages/events/_event" */))
 const _74b2a4ef = () => interopDefault(import('../pages/form/_form.vue' /* webpackChunkName: "pages/form/_form" */))
 const _66e4f629 = () => interopDefault(import('../pages/galleries/_gallery.vue' /* webpackChunkName: "pages/galleries/_gallery" */))
@@ -122,10 +121,6 @@ export function createRouter() {
       path: "/ThankYou",
       component: _6f2ad2e8,
       name: "ThankYou"
-    }, {
-      path: "/events/vue-vixens-day",
-      component: _a437ec6c,
-      name: "events-vue-vixens-day"
     }, {
       path: "/events/:event?",
       component: _7da7e34a,

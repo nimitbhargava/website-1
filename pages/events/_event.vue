@@ -15,6 +15,12 @@
             :to="`/form/${$route.params.event}`"
           >Registration</v-btn>
           <v-btn
+            v-if="currentEvent.registrationUrl"
+            color="primary darken-1"
+            :href="currentEvent.registrationUrl"
+            target="_blank"
+          >Registration</v-btn>
+          <v-btn
             v-if="currentEvent.callForSpeakersUrl"
             :href="currentEvent.callForSpeakersUrl"
             color="primary darken-1"
@@ -56,7 +62,7 @@
         <v-layout row wrap justify-space-around>
           <v-flex xs12 sm3 v-for="sponsor in currentEvent.sponsors" :key="sponsor.name">
             <div class="vv-day-sponsor px-4 mb-3">
-              <a :href="sponsor.website" target="_blank">
+              <a :href="sponsor.website.url" target="_blank">
                 <img :src="sponsor.img" class="vv-day-sponsor-logo">
               </a>
             </div>
