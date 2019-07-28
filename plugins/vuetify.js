@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Vuetify from 'vuetify'
+import Vue from 'vue';
+import Vuetify from 'vuetify';
 
 Vue.use(Vuetify, {
   theme: {
@@ -10,5 +10,5 @@ Vue.use(Vuetify, {
     warning: '#ffb300',
     error: '#B71C1C',
     success: '#2E7D32',
-  }
+  },
 });
