@@ -10,9 +10,9 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_axios_4c29f0f3 from 'nuxt_plugin_axios_4c29f0f3' // Source: ./axios.js (mode: 'all')
-import nuxt_plugin_templatesplugin715d1f8a_396d5a7c from 'nuxt_plugin_templatesplugin715d1f8a_396d5a7c' // Source: ./templates.plugin.715d1f8a.js (mode: 'all')
-import nuxt_plugin_googleanalytics_46b13d5a from 'nuxt_plugin_googleanalytics_46b13d5a' // Source: ./google-analytics.js (mode: 'client')
+import nuxt_plugin_axios_5a194d19 from 'nuxt_plugin_axios_5a194d19' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_templatesplugin354ed3d5_57298f16 from 'nuxt_plugin_templatesplugin354ed3d5_57298f16' // Source: ./templates.plugin.354ed3d5.js (mode: 'all')
+import nuxt_plugin_googleanalytics_0f25116d from 'nuxt_plugin_googleanalytics_0f25116d' // Source: ./google-analytics.js (mode: 'client')
 import nuxt_plugin_vuetify_165b1c58 from 'nuxt_plugin_vuetify_165b1c58' // Source: ../plugins/vuetify (mode: 'all')
 import nuxt_plugin_eventBus_aaeb250a from 'nuxt_plugin_eventBus_aaeb250a' // Source: ../plugins/eventBus.js (mode: 'all')
 import nuxt_plugin_i18n_1fba523a from 'nuxt_plugin_i18n_1fba523a' // Source: ../plugins/i18n.js (mode: 'all')
@@ -74,7 +74,7 @@ async function createApp(ssrContext) {
       dateErr: null,
       error(err) {
         err = err || null
-        app.context._errored = !!err
+        app.context._errored = Boolean(err)
         err = err ? normalizeError(err) : null
         const nuxt = this.nuxt || this.$options.nuxt
         nuxt.dateErr = Date.now()
@@ -135,16 +135,16 @@ async function createApp(ssrContext) {
 
   // Plugin execution
 
-  if (typeof nuxt_plugin_axios_4c29f0f3 === 'function') {
-    await nuxt_plugin_axios_4c29f0f3(app.context, inject)
+  if (typeof nuxt_plugin_axios_5a194d19 === 'function') {
+    await nuxt_plugin_axios_5a194d19(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_templatesplugin715d1f8a_396d5a7c === 'function') {
-    await nuxt_plugin_templatesplugin715d1f8a_396d5a7c(app.context, inject)
+  if (typeof nuxt_plugin_templatesplugin354ed3d5_57298f16 === 'function') {
+    await nuxt_plugin_templatesplugin354ed3d5_57298f16(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_googleanalytics_46b13d5a === 'function') {
-    await nuxt_plugin_googleanalytics_46b13d5a(app.context, inject)
+  if (process.client && typeof nuxt_plugin_googleanalytics_0f25116d === 'function') {
+    await nuxt_plugin_googleanalytics_0f25116d(app.context, inject)
   }
 
   if (typeof nuxt_plugin_vuetify_165b1c58 === 'function') {
