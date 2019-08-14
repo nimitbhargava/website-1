@@ -2,18 +2,18 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
-const _137ae286 = () => interopDefault(import('../pages/about.vue' /* webpackChunkName: "pages/about" */))
-const _72ba98b3 = () => interopDefault(import('../pages/Credits.vue' /* webpackChunkName: "pages/Credits" */))
-const _bf84d0ea = () => interopDefault(import('../pages/gallery.vue' /* webpackChunkName: "pages/gallery" */))
-const _07fb2f18 = () => interopDefault(import('../pages/library.vue' /* webpackChunkName: "pages/library" */))
-const _6f6057b0 = () => interopDefault(import('../pages/Request.vue' /* webpackChunkName: "pages/Request" */))
-const _ec2787a0 = () => interopDefault(import('../pages/sponsors.vue' /* webpackChunkName: "pages/sponsors" */))
-const _8f14f918 = () => interopDefault(import('../pages/team.vue' /* webpackChunkName: "pages/team" */))
-const _6f2ad2e8 = () => interopDefault(import('../pages/ThankYou.vue' /* webpackChunkName: "pages/ThankYou" */))
-const _7da7e34a = () => interopDefault(import('../pages/events/_event.vue' /* webpackChunkName: "pages/events/_event" */))
-const _74b2a4ef = () => interopDefault(import('../pages/form/_form.vue' /* webpackChunkName: "pages/form/_form" */))
-const _66e4f629 = () => interopDefault(import('../pages/galleries/_gallery.vue' /* webpackChunkName: "pages/galleries/_gallery" */))
-const _3332bd4b = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _7911e9c0 = () => interopDefault(import('../pages/about.vue' /* webpackChunkName: "pages/about" */))
+const _144f02cd = () => interopDefault(import('../pages/Credits.vue' /* webpackChunkName: "pages/Credits" */))
+const _41d201a5 = () => interopDefault(import('../pages/gallery.vue' /* webpackChunkName: "pages/gallery" */))
+const _c4d25ae4 = () => interopDefault(import('../pages/library.vue' /* webpackChunkName: "pages/library" */))
+const _69e43e42 = () => interopDefault(import('../pages/Request.vue' /* webpackChunkName: "pages/Request" */))
+const _1ae51556 = () => interopDefault(import('../pages/sponsors.vue' /* webpackChunkName: "pages/sponsors" */))
+const _733640cc = () => interopDefault(import('../pages/team.vue' /* webpackChunkName: "pages/team" */))
+const _59636fb2 = () => interopDefault(import('../pages/ThankYou.vue' /* webpackChunkName: "pages/ThankYou" */))
+const _5426d1e4 = () => interopDefault(import('../pages/events/_event.vue' /* webpackChunkName: "pages/events/_event" */))
+const _aa4c66d6 = () => interopDefault(import('../pages/form/_form.vue' /* webpackChunkName: "pages/form/_form" */))
+const _175517cf = () => interopDefault(import('../pages/galleries/_gallery.vue' /* webpackChunkName: "pages/galleries/_gallery" */))
+const _39a23436 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 Vue.use(Router)
 
@@ -91,51 +91,51 @@ export function createRouter() {
 
     routes: [{
       path: "/about",
-      component: _137ae286,
+      component: _7911e9c0,
       name: "about"
     }, {
       path: "/Credits",
-      component: _72ba98b3,
+      component: _144f02cd,
       name: "Credits"
     }, {
       path: "/gallery",
-      component: _bf84d0ea,
+      component: _41d201a5,
       name: "gallery"
     }, {
       path: "/library",
-      component: _07fb2f18,
+      component: _c4d25ae4,
       name: "library"
     }, {
       path: "/Request",
-      component: _6f6057b0,
+      component: _69e43e42,
       name: "Request"
     }, {
       path: "/sponsors",
-      component: _ec2787a0,
+      component: _1ae51556,
       name: "sponsors"
     }, {
       path: "/team",
-      component: _8f14f918,
+      component: _733640cc,
       name: "team"
     }, {
       path: "/ThankYou",
-      component: _6f2ad2e8,
+      component: _59636fb2,
       name: "ThankYou"
     }, {
       path: "/events/:event?",
-      component: _7da7e34a,
+      component: _5426d1e4,
       name: "events-event"
     }, {
       path: "/form/:form?",
-      component: _74b2a4ef,
+      component: _aa4c66d6,
       name: "form-form"
     }, {
       path: "/galleries/:gallery?",
-      component: _66e4f629,
+      component: _175517cf,
       name: "galleries-gallery"
     }, {
       path: "/",
-      component: _3332bd4b,
+      component: _39a23436,
       name: "index"
     }],
 

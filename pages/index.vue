@@ -4,7 +4,7 @@
       <v-container fill-height>
         <v-layout align-center row wrap justify-space-between>
           <v-flex xs12 sm12 md4 class="text-xs-center" order-md2>
-            <img class="vv-logo" src="~/assets/images/logo.png" alt="VueVixens logo">
+            <img class="vv-logo" src="~/assets/images/logo.png" alt="VueVixens logo" />
           </v-flex>
           <v-flex xs12 sm12 md7 order-md1>
             <h1 class="vv-heading font-lato text-xs-center text-md-left">{{$t('heading.title')}}</h1>
@@ -18,6 +18,11 @@
                 color="accent darken-1"
               >{{$t('heading.workshops')}}</v-btn>
               <v-btn
+                href="https://www.meetup.com/vuevixens"
+                target="_blank"
+                color="accent darken-1"
+              >Meetups</v-btn>
+              <v-btn
                 href="https://www.patreon.com/vuevixens"
                 target="_blank"
                 color="accent darken-1"
@@ -27,12 +32,7 @@
         </v-layout>
       </v-container>
     </v-parallax>
-    <VVAnnouncements v-if="announcements && announcements.length" :announcements="announcements"/>
-    <VVMeetups
-      title="Meetups"
-      loadingMessage="Checking for meetups..."
-      laterMessage="No meetups found, check back later?"
-    />
+    <VVAnnouncements v-if="announcements && announcements.length" :announcements="announcements" />
   </div>
 </template>
 
@@ -40,13 +40,11 @@
 import storyblok from "../mixins/storyblok";
 import messages from "../assets/translations/home";
 import VVAnnouncements from "../components/Announcements";
-import VVMeetups from "../components/Meetups";
 
 export default {
   mixins: [storyblok],
   components: {
-    VVAnnouncements,
-    VVMeetups
+    VVAnnouncements
   },
 
   computed: {
