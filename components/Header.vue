@@ -2,7 +2,7 @@
   <v-toolbar class="vv-toolbar" color="secondary darken-2" dark fixed app>
     <v-toolbar-side-icon class="hidden-md-and-up" @click.stop="$emit('toggleDrawer')"></v-toolbar-side-icon>
     <nuxt-link tag="v-toolbar-title" class="vv-logo" to="/">
-      <img src="~/assets/images/logo.png" alt="VueVixens Logo"> Vue Vixens
+      <img src="~/assets/images/logo.png" alt="VueVixens Logo" /> Vue Vixens
     </nuxt-link>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
@@ -10,7 +10,6 @@
       <v-btn flat to="/sponsors" nuxt>{{ $t("menu.sponsors") }}</v-btn>
       <v-btn flat to="/team" nuxt>{{ $t("menu.team") }}</v-btn>
       <v-btn flat to="/gallery" nuxt>{{ $t("menu.gallery") }}</v-btn>
-      <v-btn flat to="/library" nuxt>{{ $t("menu.library") }}</v-btn>
       <v-btn flat href="https://dev.to/vuevixens" target="_blank">Blog</v-btn>
       <v-btn flat href="https://shop.vuevixens.org/" target="_blank">{{ $t("menu.shop") }}</v-btn>
       <a class="github-link" flat href="https://github.com/VueVixens" target="_blank">

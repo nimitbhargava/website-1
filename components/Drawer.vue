@@ -20,9 +20,7 @@
       <v-list-tile to="/gallery">
         <v-list-tile-title class="subheading">{{ $t("menu.gallery") }}</v-list-tile-title>
       </v-list-tile>
-      <v-list-tile to="/library">
-        <v-list-tile-title class="subheading">{{ $t("menu.library") }}</v-list-tile-title>
-      </v-list-tile>
+
       <v-list-tile href="https://dev.to/vuevixens" target="_blank">
         <v-list-tile-title class="subheading">Blog</v-list-tile-title>
       </v-list-tile>
