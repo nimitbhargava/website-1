@@ -67,7 +67,9 @@ module.exports = {
 		['storyblok-nuxt', { accessToken: 'plc0fBh2no8owEeTALSN2wtt', cacheProvider: 'memory' }],
 		'@nuxtjs/axios',
 		'@nuxtjs/proxy',
+		'@bazzite/nuxt-netlify',
 	],
+	netlify: {},
 	loading: { color: '#3B8070' },
 	build: {
 		vendor: ['vue-i18n'],
