@@ -55,6 +55,9 @@ module.exports = {
 			},
 		],
 	},
+	generate: {
+		fallback: true,
+	},
 	plugins: ['~/plugins/vuetify', '~/plugins/eventBus.js', '~/plugins/i18n.js', '~/plugins/vue-moment.js'],
 	css: ['~/assets/css/app.styl', '~/assets/css/main.scss', 'flag-icon-css/css/flag-icon.min.css'],
 	modules: [
