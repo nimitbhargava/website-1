@@ -10,9 +10,9 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
-import nuxt_plugin_axios_5a194d19 from 'nuxt_plugin_axios_5a194d19' // Source: ./axios.js (mode: 'all')
-import nuxt_plugin_templatesplugin354ed3d5_57298f16 from 'nuxt_plugin_templatesplugin354ed3d5_57298f16' // Source: ./templates.plugin.354ed3d5.js (mode: 'all')
-import nuxt_plugin_googleanalytics_0f25116d from 'nuxt_plugin_googleanalytics_0f25116d' // Source: ./google-analytics.js (mode: 'client')
+import nuxt_plugin_axios_4ac66d0c from 'nuxt_plugin_axios_4ac66d0c' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_templatesplugin82539fd8_1f4d77b1 from 'nuxt_plugin_templatesplugin82539fd8_1f4d77b1' // Source: ./templates.plugin.82539fd8.js (mode: 'all')
+import nuxt_plugin_googleanalytics_252bbe6c from 'nuxt_plugin_googleanalytics_252bbe6c' // Source: ./google-analytics.js (mode: 'client')
 import nuxt_plugin_vuetify_165b1c58 from 'nuxt_plugin_vuetify_165b1c58' // Source: ../plugins/vuetify (mode: 'all')
 import nuxt_plugin_eventBus_aaeb250a from 'nuxt_plugin_eventBus_aaeb250a' // Source: ../plugins/eventBus.js (mode: 'all')
 import nuxt_plugin_i18n_1fba523a from 'nuxt_plugin_i18n_1fba523a' // Source: ../plugins/i18n.js (mode: 'all')
@@ -135,16 +135,16 @@ async function createApp(ssrContext) {
 
   // Plugin execution
 
-  if (typeof nuxt_plugin_axios_5a194d19 === 'function') {
-    await nuxt_plugin_axios_5a194d19(app.context, inject)
+  if (typeof nuxt_plugin_axios_4ac66d0c === 'function') {
+    await nuxt_plugin_axios_4ac66d0c(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_templatesplugin354ed3d5_57298f16 === 'function') {
-    await nuxt_plugin_templatesplugin354ed3d5_57298f16(app.context, inject)
+  if (typeof nuxt_plugin_templatesplugin82539fd8_1f4d77b1 === 'function') {
+    await nuxt_plugin_templatesplugin82539fd8_1f4d77b1(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_googleanalytics_0f25116d === 'function') {
-    await nuxt_plugin_googleanalytics_0f25116d(app.context, inject)
+  if (process.client && typeof nuxt_plugin_googleanalytics_252bbe6c === 'function') {
+    await nuxt_plugin_googleanalytics_252bbe6c(app.context, inject)
   }
 
   if (typeof nuxt_plugin_vuetify_165b1c58 === 'function') {
