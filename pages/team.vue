@@ -21,35 +21,12 @@
         <v-flex xs12 class="text-xs-center">
           <h2 class="vv-subheading font-lato text-xs-center">{{ $t("chapter") }}</h2>
         </v-flex>
-        <v-container grid-list-lg>
+        <v-container grid-list-lg v-for="chapter in chapterTitles" :key="chapter">
           <v-layout wrap justify-center>
-            <v-flex xs12 sm4 lg3 v-for="member in chapterLeaders" :key="member.name">
-              <v-card height="100%">
-                <v-img
-                  height="200px"
-                  :src="member.img || '/images/fox-placeholder.jpg'"
-                  class="grey lighten-2"
-                >
-                  <v-layout slot="placeholder" fill-height align-center justify-center ma-0>
-                    <v-progress-circular indeterminate color="grey darken-5"></v-progress-circular>
-                  </v-layout>
-                </v-img>
-                <v-card-title justify-center>
-                  <h3 class="d-block text-xs-center">{{member.name}}</h3>
-                  <h4
-                    class="d-block text-xs-center primary--text text--darken-2"
-                  >{{member.title}} Chapter Leader</h4>
-                  <a
-                    class="text-xs-center"
-                    v-if="member.twitter"
-                    :href="'http://www.twitter.com/' + member.twitter"
-                  >
-                    <i class="fab fa-twitter"></i>
-                    @{{member.twitter}}
-                  </a>
-                </v-card-title>
-              </v-card>
+            <v-flex xs12 class="text-xs-center">
+              <h3>{{ chapter }}</h3>
             </v-flex>
+            <VVMember size="300px" member-type="chapterLeader" v-for="member in filterByChapter(chapter)" :key="member.name" :member="member" />
           </v-layout>
         </v-container>
       </template>
@@ -80,12 +57,23 @@ export default {
         return this.story.content.body.filter(item => item.chapter);
       }
     },
+    chapterTitles() {
+      if (this.chapterLeaders) {
+        let chapters = this.chapterLeaders.map(leader => leader.title);
+        return [...new Set(chapters)];
+      }
+    },
     advisory() {
       if (this.story.content.body) {
         return this.story.content.body.filter(
           item => !item.staff && !item.chapter
         );
       }
+    }
+  },
+  methods: {
+    filterByChapter(chapterName) {
+      return this.chapterLeaders.filter(chapter => chapter.title === chapterName);
     }
   }
 };
